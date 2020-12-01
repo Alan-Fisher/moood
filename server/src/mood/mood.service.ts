@@ -1,0 +1,52 @@
+import { Injectable, HttpException, HttpStatus } from '@nestjs/common'
+import { InjectRepository } from '@nestjs/typeorm'
+import { Mood } from './mood.entity'
+import { Repository } from 'typeorm'
+import { MoodDTO, MoodRO } from './mood.dto'
+import { Tag } from '../tag/tag.entity'
+import { UserDTO } from '../user/user.dto'
+import { UserService } from '../user/user.service'
+
+@Injectable()
+export class MoodService {
+  constructor(
+    @InjectRepository(Mood) private readonly repo: Repository<Mood>,
+    @InjectRepository(Tag) private readonly tagsRepository: Repository<Tag>,
+    private readonly userService: UserService,
+  ) { }
+
+  public async getAll({ id }: UserDTO): Promise<MoodRO[]> {
+    const moods = await this.repo.find({
+      where: { owner: { id }, isArchived: false },
+      relations: ['tags'],
+      order: { createDateTime: 'DESC' }
+    })
+
+    return moods
+  }
+
+  public async create(dto: MoodDTO, { id }: UserDTO): Promise<MoodDTO> {
+    const owner = await this.userService.findOne({ where: { id } })
+
+    const tags = await this.tagsRepository.findByIds(dto.tagIds)
+    const mood = {
+      ...dto.toEntity(),
+      tags,
+      owner,
+    }
+
+    return this.repo.save(mood)
+      .then(e => MoodDTO.fromEntity(e))
+  }
+
+  public async archive(id: number, { id: userId }: UserDTO): Promise<string> {
+    const mood = await this.repo.findOne({ where: { id, owner: { id: userId } } })
+    if (!mood) {
+      throw new HttpException('Not found', HttpStatus.NOT_FOUND) // Q okay exception? Mention category
+    }
+    mood.isArchived = true
+
+    return this.repo.update({ id }, mood)
+      .then(() => `${id} mood is archived`)
+  }
+}
