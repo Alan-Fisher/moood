@@ -6,19 +6,21 @@ import * as bcrypt from 'bcrypt'
 export class User extends BaseEntity {
   @Column({
     type: 'varchar',
+    length: 50,
     nullable: false,
-    unique: true
   })
   username: string;
 
   @Column({
     type: 'varchar',
+    length: 100,
     nullable: false
   })
   password: string;
 
   @Column({
     type: 'varchar',
+    length: 100,
     nullable: false
   })
   email: string;
