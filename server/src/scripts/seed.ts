@@ -55,28 +55,28 @@ async function run() {
 
     })
 
-//   const work = tagsByCategories
-//     .forEach(category => {
-//       setTimeout(() => {
-//         category.tags.forEach(tag => {
-//           setTimeout(() => {
-//             tagService.create(
-//               `${category.id}`,
-//               TagDTO.from({
-//                 emoji: tag.emoji,
-//                 name: tag.name,
-//                 state: tag.state,
-//                 id: tag.id,
-//               }),
-//               user
-//             )
-//           }, 300)
-//         })
-//       }, 500)
-//     })
+  // const work = tagsByCategories
+  //   .forEach(category => {
+  //     setTimeout(() => {
+  //       category.tags.forEach(tag => {
+  //         setTimeout(() => {
+  //           tagService.create(
+  //             `${category.id}`,
+  //             TagDTO.from({
+  //               emoji: tag.emoji,
+  //               name: tag.name,
+  //               state: tag.state,
+  //               id: tag.id,
+  //             }),
+  //             user
+  //           )
+  //         }, 300)
+  //       })
+  //     }, 500)
+  //   })
 
-//   return await Promise.all(work)
-// }
+  return await Promise.all(work)
+}
 
 run()
   .then(() => console.log('seeding...'))
