@@ -13,7 +13,7 @@ import { User } from '../user/user.entity'
 
 async function run() {
   const tagsByCategories = await require("./alanTagsByCategories.json")
-  const user = { id: 1, username: '', email: '' } // TODO: add autosearch by email or better add autoseed on reg
+  const user = { id: 3, username: '', email: '' } // TODO: add autosearch by email or better add autoseed on reg
 
   const opt = {
     ...configService.getTypeOrmConfig(),
@@ -34,28 +34,49 @@ async function run() {
   const work = tagsByCategories
     .map(category => {
       tagCategoryService.create(
-        TagCategoryDTO.from({ name: category.name }),
+        TagCategoryDTO.from({ name: category.name, id: category.id }),
         user
       )
-        .then(({ id: categoryId }) => {
-          const { tags: categoryTags } = category
-          categoryTags.forEach(tag => {
-            tagService.create(
-              `${categoryId}`,
-              TagDTO.from({
-                emoji: tag.emoji,
-                name: tag.name,
-                state: tag.state
-              }),
-              user
-            )
-          })
-        })
+      // .then(({ id: categoryId }) => {
+      //   const { tags: categoryTags } = category
+      //   categoryTags.forEach(tag => {
+      //     tagService.create(
+      //       `${categoryId}`,
+      //       TagDTO.from({
+      //         emoji: tag.emoji,
+      //         name: tag.name,
+      //         state: tag.state,
+      //         id: tag.id,
+      //       }),
+      //       user
+      //     )
+      //   })
+      // })
 
     })
 
-  return await Promise.all(work)
-}
+//   const work = tagsByCategories
+//     .forEach(category => {
+//       setTimeout(() => {
+//         category.tags.forEach(tag => {
+//           setTimeout(() => {
+//             tagService.create(
+//               `${category.id}`,
+//               TagDTO.from({
+//                 emoji: tag.emoji,
+//                 name: tag.name,
+//                 state: tag.state,
+//                 id: tag.id,
+//               }),
+//               user
+//             )
+//           }, 300)
+//         })
+//       }, 500)
+//     })
+
+//   return await Promise.all(work)
+// }
 
 run()
   .then(() => console.log('seeding...'))
