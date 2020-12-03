@@ -13,7 +13,7 @@ import { User } from '../user/user.entity'
 
 async function run() {
   const tagsByCategories = await require("./alanTagsByCategories.json")
-  const user = { id: 3, username: '', email: '' } // TODO: add autosearch by email or better add autoseed on reg
+  const user = { id: 1, username: '', email: '' } // TODO: add autosearch by email or better add autoseed on reg
 
   const opt = {
     ...configService.getTypeOrmConfig(),
