@@ -27,11 +27,7 @@ export class MoodService {
 
   public async create(dto: MoodDTO, { id }: UserDTO): Promise<MoodDTO> {
     const owner = await this.userService.findOne({ where: { id } })
-
-    let tags = []
-    if (dto.tagIds?.length > 0) { // TODO: remove after using backup 
-      tags = await this.tagsRepository.findByIds(dto.tagIds)
-    }
+    const tags = await this.tagsRepository.findByIds(dto.tagIds)
     const mood = {
       ...dto.toEntity(),
       tags,
