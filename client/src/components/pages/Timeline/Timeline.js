@@ -6,7 +6,7 @@ import { MoodModel } from '../../../models'
 
 import { TimelineStyle, CardsStyle } from './TimelineStyle'
 import { MoodCard } from '../../organisms'
-import { Text } from '../../atoms'
+import { Text, Badge } from '../../atoms'
 
 const Timeline = () => {
   useEffect(() => {
@@ -15,14 +15,40 @@ const Timeline = () => {
 
   const { moods } = MoodModel
 
+  const renderDateLabel = (createDateTime) => {
+    const shouldShowYear = () => new Date().getFullYear() !== new Date(createDateTime).getFullYear()
+    const localCreateDate = new Date(createDateTime).toLocaleString('ru', { day: 'numeric', month: 'long', year: shouldShowYear() ? 'numeric' : undefined })
+
+    return (
+      <Badge margin="0px auto 7px">
+        <Text color="white">{localCreateDate}</Text>
+      </Badge>
+    )
+  }
+
   function renderCards() {
     if (moods?.length > 0) {
-      return moods.map(moodDetails => (
-        <MoodCard
-          key={moodDetails.id}
-          moodDetails={moodDetails}
-        />
-      ))
+      return moods.map((moodDetails, idx) => {
+        const { createDateTime } = moodDetails
+
+        const isFirstNoteForDate = () => {
+          const toDateString = (dateTime) => new Date(dateTime).toDateString()
+          const createDate = toDateString(createDateTime)
+          const prevCreateDate = toDateString(moods[idx - 1]?.createDateTime)
+
+          return createDate !== prevCreateDate
+        }
+
+        return (
+          <>
+            {isFirstNoteForDate() && renderDateLabel(createDateTime)}
+            <MoodCard
+              key={moodDetails.id}
+              moodDetails={moodDetails}
+            />
+          </>
+        )
+      })
     }
 
     if (moods?.length === 0) { return <Text size="xl">Нет записей</Text> }

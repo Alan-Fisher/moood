@@ -21,7 +21,7 @@ Badge.propTypes = {
 }
 
 Badge.defaultProps = {
-  color: 'black',
+  color: '#444', // dark
   size: 'md',
   margin: '0px',
   onClick: () => {},
