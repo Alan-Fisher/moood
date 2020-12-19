@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types*/
-import { Controller, Get, Post, Delete, Body, ValidationPipe, Param, UseGuards, Req } from '@nestjs/common'
+import { Controller, Get, Post, Delete, Body, ValidationPipe, Param, UseGuards, Req, Patch } from '@nestjs/common'
 import { TagService } from './tag.service'
-import { TagDTO, TagRO } from './tag.dto'
+import { TagDTO, TagRO, UpdateTagDTO } from './tag.dto'
 import { AuthGuard } from '@nestjs/passport'
 import { UserDTO } from '../user/user.dto'
 
@@ -27,6 +27,18 @@ export class TagController {
     const user = req.user as UserDTO
 
     return this.serv.create(tagCategory, TagDTO.from(dto), user)
+  }
+
+  @Patch(':id')
+  @UseGuards(AuthGuard())
+  public async patch(
+    @Param('id') id: number,
+    @Body(new ValidationPipe({ transform: true })) dto: UpdateTagDTO,
+    @Req() req: any,
+  ): Promise<string> {
+    const user = req.user as UserDTO
+
+    return this.serv.update(id, TagDTO.from(dto), user)
   }
 
   @Delete(':id')

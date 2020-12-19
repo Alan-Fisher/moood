@@ -2,7 +2,7 @@ import { Injectable, HttpException, HttpStatus } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Tag } from '../tag/tag.entity'
 import { Repository } from 'typeorm'
-import { TagDTO, TagRO } from './tag.dto'
+import { TagDTO, TagRO, UpdateTagDTO } from './tag.dto'
 import { TagCategory } from '../tagCategory/tagCategory.entity'
 import { UserDTO } from '../user/user.dto'
 import { UserService } from '../user/user.service'
@@ -48,6 +48,19 @@ export class TagService {
 
     return this.repo.save(tag)
       .then(e => TagDTO.fromEntity(e))
+  }
+
+  public async update(id: number, dto: UpdateTagDTO, { id: userId }: UserDTO): Promise<any> {
+    const tag = await this.repo.findOne({ where: { id, owner: { id: userId } } })
+    if (!tag) {
+      throw new HttpException('Not found', HttpStatus.NOT_FOUND)
+    }
+  
+    tag.emoji = dto.emoji // TODO: make update more beautiful?
+    tag.name = dto.name
+
+    return this.repo.update({ id }, tag)
+      .then(() => `${id} tag is updated`)
   }
 
   public async archive(id: number, { id: userId }: UserDTO): Promise<string> {

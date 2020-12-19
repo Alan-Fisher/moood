@@ -1,5 +1,5 @@
 export interface LoginStatus {
   email: string;
-  accessToken: any;
-  // expiresIn: any;
+  accessToken: string;
+  expiresIn: string;
 }

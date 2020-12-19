@@ -21,7 +21,7 @@ export class TagDTO implements Readonly<TagDTO> {
   @IsString()
   state: string
 
-  public static from(dto: Partial<TagDTO>) {
+  public static from(dto: Partial<TagDTO>): TagDTO {
     const it = new TagDTO()
     it.id = dto.id
     it.emoji = dto.emoji
@@ -31,7 +31,7 @@ export class TagDTO implements Readonly<TagDTO> {
     return it
   }
 
-  public static fromEntity(entity: Tag) {
+  public static fromEntity(entity: Tag): TagDTO {
     return this.from({
       id: entity.id,
       emoji: entity.emoji,
@@ -56,4 +56,9 @@ export class TagRO {
   name: string
   emoji: string
   state: string
+}
+
+export class UpdateTagDTO {
+  name: string
+  emoji: string
 }
