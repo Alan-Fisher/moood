@@ -9,12 +9,20 @@ import { AuthModel } from '../../../models'
 const Settings = () => (
   <SettingsStyle>
     <Button
-      margin="5px auto"
+      margin="50px auto"
       onClick={() => AuthModel.logout()}
       outlined
       color="black"
     >
       Log out
+    </Button>
+    <Button
+      margin="5px auto"
+      onClick={() => window.location.reload()}
+      outlined
+      color="black"
+    >
+      Refresh PWA
     </Button>
   </SettingsStyle>
 )
