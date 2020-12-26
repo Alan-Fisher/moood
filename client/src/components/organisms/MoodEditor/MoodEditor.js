@@ -27,8 +27,8 @@ const MoodEditor = ({ moodId, closeMoodEditor }) => {
       const parsedCreatedDateTime = new Date(Date.parse(createDateTime))
 
       moodDetails.tagIds = tags.map(({ id }) => id)
-      moodDetails.date = transformDateForInput(parsedCreatedDateTime) // TODO: beautify
-      moodDetails.time = parsedCreatedDateTime.toLocaleString('en', {
+      moodDetails.date = transformDateForInput(parsedCreatedDateTime)
+      moodDetails.time = parsedCreatedDateTime.toLocaleString('en', { // TODO: DRY all datetime working
         hourCycle: 'h23',
         hour: '2-digit',
         minute: '2-digit',

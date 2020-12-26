@@ -13,7 +13,7 @@ import { parseQueryString } from '../../../common/helpers'
 
 const Login = ({ history }) => {
   const [formError, setFormError] = useState(undefined)
-  async function onSubmit({ email, password }) {
+  const onSubmit = ({ email, password }) => {
     AuthModel.login(email, password)
       .then(() => handleRedirectAfterLogin())
       .catch(({ response }) => handleLoginError(response))

@@ -16,7 +16,7 @@ const Create = ({ history }) => {
     note: '',
     date: transformDateForInput(new Date()),
     time: new Date().toLocaleString('en', {
-      hour12: false, hour: '2-digit', minute: '2-digit',
+      hourCycle: 'h23', hour: '2-digit', minute: '2-digit',
     }),
   }
 

@@ -51,17 +51,11 @@ export class MoodService {
     const mood = await this.repo.findOne({ where: { id, owner: { id: userId } } })
 
     if (!mood) {
-      throw new HttpException('Not found', HttpStatus.NOT_FOUND) // Q okay exception? Mention category
+      throw new HttpException('Not found', HttpStatus.NOT_FOUND)
     }
     const {note, tagIds, feelingIds, createDateTime, moodLevel } = dto // eslint-disable-line
     const tags = await this.tagsRepository.findByIds(tagIds)
-    console.log(tags)
-    // const updatedMood = {
-    //   ...dto.toEntity(),
-    //   id, // TODO: bad code?
-    //   tags,
-    //   owner,
-    // }
+    
     mood.moodLevel = moodLevel 
     mood.note = note
     mood.tags = tags
@@ -75,7 +69,7 @@ export class MoodService {
   public async archive(id: number, { id: userId }: UserDTO): Promise<string> {
     const mood = await this.repo.findOne({ where: { id, owner: { id: userId } } })
     if (!mood) {
-      throw new HttpException('Not found', HttpStatus.NOT_FOUND) // Q okay exception? Mention category
+      throw new HttpException('Not found', HttpStatus.NOT_FOUND)
     }
     mood.isArchived = true
 

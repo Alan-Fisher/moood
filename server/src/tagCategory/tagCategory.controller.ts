@@ -20,7 +20,7 @@ export class TagCategoryController {
   @Post()
   @UseGuards(AuthGuard())
   public async post(
-    @Body(new ValidationPipe({ transform: true })) dto: TagCategoryDTO, // TODO: change DTO (e.g. don't accept id)
+    @Body(new ValidationPipe({ transform: true })) dto: TagCategoryDTO,
     @Req() req: any,
   ) {
     const user = req.user as UserDTO

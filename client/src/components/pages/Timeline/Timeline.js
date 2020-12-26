@@ -75,6 +75,7 @@ const Timeline = () => {
             margin="5px 10px"
             size="30px"
             icon={faTimes}
+            pointer
           />
           <MoodEditor
             closeMoodEditor={() => setEditingMoodId(null)}

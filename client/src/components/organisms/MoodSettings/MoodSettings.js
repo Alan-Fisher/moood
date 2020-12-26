@@ -18,7 +18,7 @@ import diaryData from '../../../common/diaryData.json'
 import { MoodSettingsStyle, DateTimeSaveButtonStyle, DividerStyle } from './MoodSettingsStyle'
 
 const MoodSettings = ({
-  isEditMode, initialMoodDetails, submitMood,
+  initialMoodDetails, submitMood,
 }) => {
   useEffect(() => {
     TagsModel.getFavoriteTags()
@@ -30,20 +30,21 @@ const MoodSettings = ({
   const { feelings, moodLevels } = diaryData
   const { favoriteTags } = TagsModel
 
-  function onSubmit(values) { // TODO: heal date-time transformations in whole project
+  const onSubmit = (values) => { // TODO: heal date-time transformations in whole project
     const { date, time, ...params } = values
-    params.createDateTime = new Date(Date.parse(`${date}T${time}:00.000Z`) - 1000 * 60 * 60 * 6) // TODO: beautify
+    const timezoneSecondsOffset = new Date().getTimezoneOffset() * 1000 * 60 // Q: is reliable enough?
+    params.createDateTime = new Date(Date.parse(`${date}T${time}:00.000Z`) + timezoneSecondsOffset) // TODO: beautify
     submitMood(params)
   }
 
-  function countHiddenSelections(selectedIds, notHiddenItems) {
+  const countHiddenSelections = (selectedIds, notHiddenItems) => {
     const notHiddenIds = notHiddenItems.map(item => item.id)
     const hiddenIds = selectedIds.filter(x => !notHiddenIds.includes(x))
 
     return hiddenIds.length
   }
 
-  function onCategoryClick(categoryName) {
+  const onCategoryClick = (categoryName) => {
     if (extendedEmojis === categoryName) {
       setExtendedEmojis()
     } else {

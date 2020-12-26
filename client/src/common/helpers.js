@@ -1,4 +1,4 @@
-export function parseQueryString(str) {
+export const parseQueryString = (str) => {
   const objURL = {}
 
   str.replace(

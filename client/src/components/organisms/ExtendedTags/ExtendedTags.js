@@ -24,13 +24,13 @@ const ExtendedTags = ({ outsideSelectedIds, closeModal, saveSelection }) => {
     TagsModel.getTagsByCategories()
   }, [])
 
-  async function handleDeleteTag(tagId) {
+  const handleDeleteTag = async (tagId) => {
     if (window.confirm('Удалить тэг?')) { // eslint-disable-line no-alert
       await TagsModel.archiveTag(tagId)
     }
   }
 
-  function handleFavorite(tagId, state) {
+  const handleFavorite = (tagId, state) => {
     if (state === 'favorite' && window.confirm('Удалить тэг из избранного?')) { // eslint-disable-line no-alert
       TagsModel.unfavoriteTag(tagId)
     } else {
@@ -38,7 +38,7 @@ const ExtendedTags = ({ outsideSelectedIds, closeModal, saveSelection }) => {
     }
   }
 
-  function handleHalfFavorite(tagId, state) {
+  const handleHalfFavorite = (tagId, state) => {
     if (state === 'half-favorite' && window.confirm('Удалить тэг из полуизбранного?')) { // eslint-disable-line no-alert
       TagsModel.unfavoriteTag(tagId)
     } else {
@@ -53,13 +53,13 @@ const ExtendedTags = ({ outsideSelectedIds, closeModal, saveSelection }) => {
     'delete',
   ]
 
-  function switchSettingsMode() {
+  const switchSettingsMode = () => {
     const modeIndex = settingsModes.indexOf(settingsMode)
     const nextModeIndex = modeIndex !== settingsModes.length - 1 ? modeIndex + 1 : 0 // TODO beauty
     setSettingsMode(settingsModes[nextModeIndex])
   }
 
-  function renderTagsByCategories() {
+  const renderTagsByCategories = () => {
     if (tagsByCategories?.length > 0) {
       return tagsByCategories.map(category => {
         const { name, tags, id: categoryId } = category

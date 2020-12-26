@@ -16,13 +16,13 @@ export const FullModalStyle = styled.div`
         left: 5px;
     }
 
-    /* & {
+    & {
         animation-duration: 0.5s;
         animation-name: slideFromRight;
     }
     
     @keyframes slideFromRight {
-        0% { left: 400px; opacity: 0% }
-        100% { left: 0px; opacity: 100%}
-       } */
+        0% { top: 800px; opacity: 0% }
+        100% { top: 0px; opacity: 100%}
+       }
 `
