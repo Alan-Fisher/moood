@@ -6,7 +6,7 @@ import { StatsStyle } from './StatsStyle'
 import { MoodModel } from '../../../models'
 import { Badge, Text } from '../../atoms'
 
-const Stats = () => {
+const Stats = () => { // TODO: refactor this gathered on the knee component
   useEffect(() => {
     MoodModel.getMoods()
   }, [])
@@ -15,10 +15,10 @@ const Stats = () => {
 
   const cases = {
     0: {
-      width: '10%',
-      transform: 'translate(350%, 0%)',
-      background: '#d4d4d4',
-      borderRadius: '5px',
+      width: '4%',
+      transform: 'translate(1000%, 0%)',
+      background: '#12cc63',
+      borderRadius: '0 5px 5px 0',
     },
     1: {
       width: '20%',
@@ -98,10 +98,22 @@ const Stats = () => {
             zIndex: 20,
             left: 0,
             height: '7px',
-            borderRadius: '4px',
             ...addLineStyle,
           }}
           />
+          {moodLevel === 0
+            && (
+              <div style={{
+                zIndex: 20,
+                left: 0,
+                height: '7px',
+                width: '4%',
+                transform: 'translate(900%, -100%)',
+                background: '#798EFF',
+                borderRadius: '5px 0 0 5px',
+              }}
+              />
+            )}
         </div>
       </>
     )
