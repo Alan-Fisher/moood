@@ -1,17 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { MoodModel } from '../../../models'
 
 import { TimelineStyle, CardsStyle } from './TimelineStyle'
-import { MoodCard } from '../../organisms'
-import { Text, Badge } from '../../atoms'
+import { MoodCard, MoodEditor } from '../../organisms'
+import {
+  Text, Badge, FullModal, Icon,
+} from '../../atoms'
 
 const Timeline = () => {
   useEffect(() => {
     MoodModel.getMoods()
   }, [])
+  const [editingMoodId, setEditingMoodId] = useState(null)
 
   const { moods } = MoodModel
 
@@ -26,10 +30,10 @@ const Timeline = () => {
     )
   }
 
-  function renderCards() {
+  const renderCards = () => {
     if (moods?.length > 0) {
       return moods.map((moodDetails, idx) => {
-        const { createDateTime } = moodDetails
+        const { createDateTime, id } = moodDetails
 
         const isFirstNoteForDate = () => {
           const toDateString = (dateTime) => new Date(dateTime).toDateString()
@@ -43,8 +47,9 @@ const Timeline = () => {
           <>
             {isFirstNoteForDate() && renderDateLabel(createDateTime)}
             <MoodCard
-              key={moodDetails.id}
+              key={id}
               moodDetails={moodDetails}
+              onClick={() => setEditingMoodId(id)}
             />
           </>
         )
@@ -57,11 +62,27 @@ const Timeline = () => {
   }
 
   return (
-    <TimelineStyle>
-      <CardsStyle>
-        {renderCards()}
-      </CardsStyle>
-    </TimelineStyle>
+    <>
+      <TimelineStyle>
+        <CardsStyle>
+          {renderCards()}
+        </CardsStyle>
+      </TimelineStyle>
+      {editingMoodId && (
+        <FullModal closeModal={() => setEditingMoodId(null)}>
+          <Icon
+            onClick={() => setEditingMoodId(null)}
+            margin="5px 10px"
+            size="30px"
+            icon={faTimes}
+          />
+          <MoodEditor
+            closeMoodEditor={() => setEditingMoodId(null)}
+            moodId={editingMoodId}
+          />
+        </FullModal>
+      )}
+    </>
   )
 }
 

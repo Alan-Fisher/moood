@@ -14,40 +14,63 @@ const Stats = () => {
   const { moods } = MoodModel
 
   const cases = {
+    0: {
+      width: '10%',
+      transform: 'translate(350%, 0%)',
+      background: '#d4d4d4',
+      borderRadius: '5px',
+    },
     1: {
       width: '20%',
       transform: 'translate(200%, 0%)',
       background: '#12cc63',
+      borderRadius: '0 5px 5px 0',
     },
     2: {
       width: '40%',
       transform: 'translate(100%, 0%)',
       background: '#12cc63',
+      borderRadius: '0 5px 5px 0',
     },
     3: {
       width: '60%',
       transform: 'translate(66.7%, 0%)',
       background: '#f06c0e',
+      borderRadius: '0 5px 5px 0',
     },
     '-1': {
       width: '20%',
       transform: 'translate(100%, 0%)',
       background: '#798EFF',
+      borderRadius: '5px 0 0 5px',
     },
     '-2': {
       width: '40%',
       transform: 'translate(0%, 0%)',
       background: '#798EFF',
+      borderRadius: '5px 0 0 5px',
     },
   }
 
   const renderDateLabel = (createDateTime) => {
     const shouldShowYear = () => new Date().getFullYear() !== new Date(createDateTime).getFullYear()
-    const localCreateDate = new Date(createDateTime).toLocaleString('ru', { day: 'numeric', month: 'long', year: shouldShowYear() ? 'numeric' : undefined })
+    const localCreateDate = new Date(createDateTime)
+      .toLocaleString('ru', { day: 'numeric', month: 'long', year: shouldShowYear() ? 'numeric' : undefined })
 
     return (
-      <Badge size="sm" margin="15px 5px 0px 15px" color="#888">
-        <Text size="sm" color="white">{localCreateDate}</Text>
+      <Badge
+        size="sm"
+        color="#AAA"
+        margin="15px 5px 0px 7px"
+      >
+        <Text
+          // margin="15px 5px 0px 7px"
+          color="white"
+          size="sm"
+        >
+          {localCreateDate}
+
+        </Text>
       </Badge>
     )
   }

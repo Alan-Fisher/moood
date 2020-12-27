@@ -8,12 +8,12 @@ export const FullModalStyle = styled.div`
     height: 100%;
     /* background: black; // dark */
     background: white;
-    z-index: 100;
+    z-index: 100;   
 
     > span:first-child {
         position: absolute;
-        top: 20px;
-        right: 40px;
+        top: 5px;
+        left: 5px;
     }
 
     /* & {

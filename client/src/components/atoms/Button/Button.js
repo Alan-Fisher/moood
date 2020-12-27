@@ -7,7 +7,7 @@ import ButtonStyle from './ButtonStyle'
 
 const Button = ({
   children, size, type, icon, color, disabled, onClick, id, inline,
-  outlined, loading, success, error, margin, float,
+  outlined, loading, success, error, margin, float, onMouseDown,
 }) => {
   const displayIconColor = () => {
     if (outlined) {
@@ -35,6 +35,7 @@ const Button = ({
       type={type}
       color={color}
       onClick={onClick}
+      onMouseDown={onMouseDown}
       disabled={disabled || loading}
       loading={loading}
       inline={inline}
@@ -59,7 +60,8 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   color: PropTypes.oneOf(['green', 'blue', 'red', 'gray', 'black', 'default']),
   icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func, // eslint-disable-line react/require-default-props
+  onMouseDown: PropTypes.func, // eslint-disable-line react/require-default-props
   outlined: PropTypes.bool,
   loading: PropTypes.bool,
   success: PropTypes.bool,

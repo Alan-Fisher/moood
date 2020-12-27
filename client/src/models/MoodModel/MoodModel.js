@@ -14,13 +14,7 @@ export class MoodModel {
 
   initialState = {
     moods: undefined,
-    mood: {
-      moodLevel: 4,
-      feelingIds: [],
-      tagIds: [],
-      note: '',
-      createDateTime: null,
-    },
+    mood: undefined,
   }
 
   getMoods() {
@@ -32,10 +26,31 @@ export class MoodModel {
       .catch()
   }
 
+  getMood(id) {
+    this.set('mood', undefined) // TODO: place clear to another place? :)
+
+    return request({
+      method: 'GET',
+      url: `/moods/${id}`,
+    })
+      .then(mood => this.set('mood', mood))
+      .catch()
+  }
+
   sendMood(params) {
     return request({
       method: 'POST',
       url: '/moods',
+      params,
+    })
+      .then()
+      .catch()
+  }
+
+  updateMood(id, params) {
+    return request({
+      method: 'PATCH',
+      url: `/moods/${id}`,
       params,
     })
       .then()

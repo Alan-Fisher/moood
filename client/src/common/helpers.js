@@ -10,3 +10,10 @@ export function parseQueryString(str) {
 
   return objURL
 }
+
+export const transformDateForInput = (date) => {
+  const array = date.toLocaleDateString().split('/')
+  array.unshift(array.pop())
+
+  return array.join('-')
+}

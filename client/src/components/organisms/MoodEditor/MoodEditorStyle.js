@@ -1,4 +1,4 @@
 import styled from 'styled-components/macro'
 
-export const CreateStyle = styled.div`
+export const MoodEditorStyle = styled.div`
 `

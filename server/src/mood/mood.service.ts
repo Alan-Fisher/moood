@@ -25,6 +25,15 @@ export class MoodService {
     return moods
   }
 
+  public async show(id: number, { id: userId }: UserDTO): Promise<MoodRO> {
+    const mood = await this.repo.findOne({
+      where: { id, owner: { id: userId } },
+      relations: ['tags']
+    })
+
+    return mood
+  }
+
   public async create(dto: MoodDTO, { id }: UserDTO): Promise<MoodDTO> {
     const owner = await this.userService.findOne({ where: { id } })
     const tags = await this.tagsRepository.findByIds(dto.tagIds)
@@ -36,6 +45,31 @@ export class MoodService {
 
     return this.repo.save(mood)
       .then(e => MoodDTO.fromEntity(e))
+  }
+
+  public async update(id: number, dto: MoodDTO, { id: userId  }: UserDTO): Promise<string>  {
+    const mood = await this.repo.findOne({ where: { id, owner: { id: userId } } })
+
+    if (!mood) {
+      throw new HttpException('Not found', HttpStatus.NOT_FOUND) // Q okay exception? Mention category
+    }
+    const {note, tagIds, feelingIds, createDateTime, moodLevel } = dto // eslint-disable-line
+    const tags = await this.tagsRepository.findByIds(tagIds)
+    console.log(tags)
+    // const updatedMood = {
+    //   ...dto.toEntity(),
+    //   id, // TODO: bad code?
+    //   tags,
+    //   owner,
+    // }
+    mood.moodLevel = moodLevel 
+    mood.note = note
+    mood.tags = tags
+    mood.feelingIds = feelingIds
+    mood.createDateTime = createDateTime
+
+    return this.repo.save(mood)
+      .then(() => `${id} mood is updated`)
   }
 
   public async archive(id: number, { id: userId }: UserDTO): Promise<string> {

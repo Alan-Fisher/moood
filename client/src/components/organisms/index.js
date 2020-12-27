@@ -9,3 +9,7 @@ export { default as MoodCard } from './MoodCard/MoodCard'
 export { default as IntroWithLogo } from './IntroWithLogo/IntroWithLogo'
 
 export { default as TagCategoryCreator } from './TagCategoryCreator/TagCategoryCreator'
+
+export { default as MoodSettings } from './MoodSettings/MoodSettings'
+
+export { default as MoodEditor } from './MoodEditor/MoodEditor'

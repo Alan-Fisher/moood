@@ -9,7 +9,7 @@ import {
 
 import { MoodModel } from '../../../models'
 
-const MoodCard = ({ moodDetails }) => {
+const MoodCard = ({ moodDetails, onClick }) => {
   const {
     id, note, moodLevel, createDateTime, feelingIds, tags,
   } = moodDetails
@@ -28,19 +28,20 @@ const MoodCard = ({ moodDetails }) => {
     feelingNamesById[id] = name
   })
 
-  function archiveMood() {
+  function archiveMood(e) {
+    e.stopPropagation()
     if (window.confirm('Delete mood?')) { // eslint-disable-line no-alert
       MoodModel.archiveMood(id)
     }
   }
 
   return (
-    <MoodCardStyle>
+    <MoodCardStyle onClick={() => onClick()}>
       <Icon
         icon={faTimesCircle}
         size="20px"
         pointer
-        onClick={() => archiveMood(id)}
+        onClick={(e) => archiveMood(e)}
       />
       <Text size="xl">
         {name}
