@@ -6,12 +6,15 @@ export const AppStyle = styled.div`
   height: 100%;
 `
 
+export const WorkaroundWrapperStyle = styled.div` // Workaround for webkit stacking context bug
+  position: fixed;
+`
+
 export const AppBodyStyle = styled.div`
   width: 400px;
   height: calc(100vh - 62px); 
   height: calc((var(--vh, 1vh) * 100) - 62px);
-  position: fixed;
   overflow: auto;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+  /* -webkit-overflow-scrolling: touch; */ // TODO: return when webkit will have no bugs with it
 `

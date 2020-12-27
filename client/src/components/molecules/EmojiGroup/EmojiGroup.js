@@ -14,7 +14,7 @@ const EmojiGroup = ({
   emojis, selectedIds, setFieldValue, openModal, settingsMode, handleDelete,
   extraSelected, handleHalfFavorite, handleFavorite,
 }) => {
-  function renderIcon(state) {
+  const renderIcon = (state) => {
     switch (settingsMode) {
       case 'create':
         break
@@ -31,7 +31,7 @@ const EmojiGroup = ({
     }
   }
 
-  function handleClick(id, state) {
+  const handleClick = (id, state) => {
     switch (settingsMode) {
       case 'create':
         handleSelect(id)
@@ -51,7 +51,7 @@ const EmojiGroup = ({
     }
   }
 
-  function handleSelect(id) {
+  const handleSelect = (id) => {
     let newFeelingsSelection
     if (selectedIds.includes(id)) {
       newFeelingsSelection = selectedIds.filter(item => item !== id)

@@ -8,21 +8,21 @@ export const FullModalStyle = styled.div`
     height: 100%;
     /* background: black; // dark */
     background: white;
-    z-index: 100;
+    z-index: 100;   
 
     > span:first-child {
         position: absolute;
-        top: 20px;
-        right: 40px;
+        top: 5px;
+        left: 5px;
     }
 
-    /* & {
+    & {
         animation-duration: 0.5s;
         animation-name: slideFromRight;
     }
     
     @keyframes slideFromRight {
-        0% { left: 400px; opacity: 0% }
-        100% { left: 0px; opacity: 100%}
-       } */
+        0% { top: 800px; opacity: 0% }
+        100% { top: 0px; opacity: 100%}
+       }
 `

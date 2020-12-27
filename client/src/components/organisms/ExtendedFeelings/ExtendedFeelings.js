@@ -16,7 +16,7 @@ const ExtendedFeelings = ({ outsideSelectedIds, saveSelection, closeModal }) => 
     { id: 2, name: 'Negative', onClick: () => setOpenedTab(2) },
   ]
 
-  function renderList() {
+  const renderList = () => {
     const listItems = openedTab === 1 ? feelings.positive : feelings.negative
 
     return listItems.map((feeling, i) => {
@@ -35,7 +35,7 @@ const ExtendedFeelings = ({ outsideSelectedIds, saveSelection, closeModal }) => 
     })
   }
 
-  function handleListItemClick(id) {
+  const handleListItemClick = (id) => {
     if (selectedIds.includes(id)) {
       setSelectedIds(oldArray => oldArray.filter(item => item !== id))
     } else {

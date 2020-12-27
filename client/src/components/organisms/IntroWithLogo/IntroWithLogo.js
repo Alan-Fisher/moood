@@ -25,9 +25,7 @@ const IntroWithLogo = () => {
     setTimeout(() => setLineItem(lineItem < lines.length - 1 ? lineItem + 1 : 0), 1000)
   }, [lineItem, lines.length])
 
-  function getEmoji(i) {
-    return lines[lineItem][i]
-  }
+  const getEmoji = (i) => lines[lineItem][i]
 
   return (
     <IntroWithLogoStyle>

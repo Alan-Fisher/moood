@@ -8,7 +8,7 @@ import { Button, Input } from '../../atoms'
 import { TagsModel } from '../../../models'
 
 const TagCategoryCreator = ({ closeModal }) => {
-  async function onSubmit(name) {
+  const onSubmit = (name) => {
     try {
       TagsModel.createTagCategory(name)
     } catch {

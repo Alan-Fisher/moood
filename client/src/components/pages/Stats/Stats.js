@@ -6,7 +6,7 @@ import { StatsStyle } from './StatsStyle'
 import { MoodModel } from '../../../models'
 import { Badge, Text } from '../../atoms'
 
-const Stats = () => {
+const Stats = () => { // TODO: refactor this gathered on the knee component
   useEffect(() => {
     MoodModel.getMoods()
   }, [])
@@ -14,40 +14,63 @@ const Stats = () => {
   const { moods } = MoodModel
 
   const cases = {
+    0: {
+      width: '4%',
+      transform: 'translate(1000%, 0%)',
+      background: '#12cc63',
+      borderRadius: '0 5px 5px 0',
+    },
     1: {
       width: '20%',
       transform: 'translate(200%, 0%)',
       background: '#12cc63',
+      borderRadius: '0 5px 5px 0',
     },
     2: {
       width: '40%',
       transform: 'translate(100%, 0%)',
       background: '#12cc63',
+      borderRadius: '0 5px 5px 0',
     },
     3: {
       width: '60%',
       transform: 'translate(66.7%, 0%)',
       background: '#f06c0e',
+      borderRadius: '0 5px 5px 0',
     },
     '-1': {
       width: '20%',
       transform: 'translate(100%, 0%)',
       background: '#798EFF',
+      borderRadius: '5px 0 0 5px',
     },
     '-2': {
       width: '40%',
       transform: 'translate(0%, 0%)',
       background: '#798EFF',
+      borderRadius: '5px 0 0 5px',
     },
   }
 
   const renderDateLabel = (createDateTime) => {
     const shouldShowYear = () => new Date().getFullYear() !== new Date(createDateTime).getFullYear()
-    const localCreateDate = new Date(createDateTime).toLocaleString('ru', { day: 'numeric', month: 'long', year: shouldShowYear() ? 'numeric' : undefined })
+    const localCreateDate = new Date(createDateTime)
+      .toLocaleString('ru', { day: 'numeric', month: 'long', year: shouldShowYear() ? 'numeric' : undefined })
 
     return (
-      <Badge size="sm" margin="15px 5px 0px 15px" color="#888">
-        <Text size="sm" color="white">{localCreateDate}</Text>
+      <Badge
+        size="sm"
+        color="#AAA"
+        margin="15px 5px 0px 7px"
+      >
+        <Text
+          // margin="15px 5px 0px 7px"
+          color="white"
+          size="sm"
+        >
+          {localCreateDate}
+
+        </Text>
       </Badge>
     )
   }
@@ -75,10 +98,22 @@ const Stats = () => {
             zIndex: 20,
             left: 0,
             height: '7px',
-            borderRadius: '4px',
             ...addLineStyle,
           }}
           />
+          {moodLevel === 0
+            && (
+              <div style={{
+                zIndex: 20,
+                left: 0,
+                height: '7px',
+                width: '4%',
+                transform: 'translate(900%, -100%)',
+                background: '#798EFF',
+                borderRadius: '5px 0 0 5px',
+              }}
+              />
+            )}
         </div>
       </>
     )

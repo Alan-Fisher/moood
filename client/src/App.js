@@ -7,7 +7,7 @@ import history from './history'
 import {
   Create, Timeline, Settings, Stats, Login,
 } from './components/pages'
-import { AppStyle, AppBodyStyle } from './AppStyle'
+import { AppStyle, AppBodyStyle, WorkaroundWrapperStyle } from './AppStyle'
 import { MenuBar } from './components/molecules'
 import { IntroWithLogo } from './components/organisms'
 
@@ -16,19 +16,21 @@ document.documentElement.style.setProperty('--vh', `${vh}px`)
 
 const Routes = withRouter(() => (
   <>
-    <AppBodyStyle>
-      <Switch>
-        <Route path="/login" component={Login} />
-        <Route path="/create" component={Create} />
-        <Route path="/timeline" component={Timeline} />
-        <Route path="/stats" component={Stats} />
-        <Route path="/settings" component={Settings} />
-        <Route path="/intro" component={IntroWithLogo} />
-        <Redirect from="/" to="/create" />
-      </Switch>
-    </AppBodyStyle>
     {!['/intro', '/login'].includes(history.location.pathname)
       && <MenuBar history={history} />}
+    <WorkaroundWrapperStyle>
+      <AppBodyStyle>
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/create" component={Create} />
+          <Route path="/timeline" component={Timeline} />
+          <Route path="/stats" component={Stats} />
+          <Route path="/settings" component={Settings} />
+          <Route path="/intro" component={IntroWithLogo} />
+          <Redirect from="/" to="/create" />
+        </Switch>
+      </AppBodyStyle>
+    </WorkaroundWrapperStyle>
   </>
 ))
 

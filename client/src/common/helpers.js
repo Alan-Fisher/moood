@@ -1,4 +1,4 @@
-export function parseQueryString(str) {
+export const parseQueryString = (str) => {
   const objURL = {}
 
   str.replace(
@@ -9,4 +9,11 @@ export function parseQueryString(str) {
   )
 
   return objURL
+}
+
+export const transformDateForInput = (date) => {
+  const array = date.toLocaleDateString().split('/')
+  array.unshift(array.pop())
+
+  return array.join('-')
 }

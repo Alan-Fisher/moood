@@ -9,7 +9,7 @@ import { Text, Link, Icon } from '../../atoms'
 const CancelOrSaveHeader = ({
   onCancel, onSave, headerText, settingsMode, switchSettingsMode,
 }) => {
-  function renderSettingsIcon() {
+  const renderSettingsIcon = () => {
     let icon
     switch (settingsMode) {
       case 'create':
