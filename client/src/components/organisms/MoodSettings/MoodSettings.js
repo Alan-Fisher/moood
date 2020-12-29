@@ -130,7 +130,6 @@ const MoodSettings = ({
               width="310px"
               name="note"
               id="noteField"
-              // ref={noteFieldRef}
             />
             <DateTimeSaveButtonStyle>
               <Field
