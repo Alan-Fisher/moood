@@ -85,7 +85,7 @@ const EmojiGroup = ({
       })}
       {openModal && (!settingsMode || settingsMode === 'create') // TODO simplify
       && (
-      <AddButtonStyle onClick={openModal}>
+      <AddButtonStyle onMouseDown={openModal}>
         {extraSelected
           ? (
             <Badge color="#f4f4f4" size="lg">
