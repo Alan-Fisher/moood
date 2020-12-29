@@ -18,7 +18,7 @@ import diaryData from '../../../common/diaryData.json'
 import { MoodSettingsStyle, DateTimeSaveButtonStyle, DividerStyle } from './MoodSettingsStyle'
 
 const MoodSettings = ({
-  initialMoodDetails, submitMood,
+  initialMoodDetails, submitMood, isEditMode,
 }) => {
   useEffect(() => {
     TagsModel.getFavoriteTags()
@@ -52,11 +52,17 @@ const MoodSettings = ({
     }
   }
 
+  const extendNoteField = async () => {
+    await setNoteFocused(true)
+    const scrollableElementId = isEditMode ? 'moodEditor' : 'appBody'
+    document.getElementById(scrollableElementId).scroll({ top: 5000, behavior: 'smooth' })
+  }
+
   const getShowingFavoriteFeelings = () => (extendedEmojis === 'feelings' ? feelings : feelings.slice(0, 9))
   const getShowingFavoriteTags = () => (extendedEmojis === 'tags' ? favoriteTags : favoriteTags.slice(0, 9))
 
   return (
-    <MoodSettingsStyle isEditMode>
+    <MoodSettingsStyle>
       <Formik
         validateOnBlur={false}
         validateOnChange={false}
@@ -107,7 +113,7 @@ const MoodSettings = ({
             <CategoryHeader name="Add a note" />
             <Field
               as={TextArea}
-              onFocus={() => setNoteFocused(true)}
+              onFocus={() => extendNoteField()}
               onBlur={() => setNoteFocused()}
               rows={isNoteFieldFocused ? 6 : 1}
               size="lg"

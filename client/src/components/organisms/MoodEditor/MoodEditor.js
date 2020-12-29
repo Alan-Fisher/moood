@@ -48,7 +48,7 @@ const MoodEditor = ({ moodId, closeMoodEditor }) => {
   const initialMoodDetails = getTransformedMoodDetails()
 
   return (
-    <MoodEditorStyle>
+    <MoodEditorStyle id="moodEditor">
       {initialMoodDetails && (
         <MoodSettings
           initialMoodDetails={initialMoodDetails}

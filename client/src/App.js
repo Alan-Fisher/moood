@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   Router, Switch, Route, Redirect, withRouter,
 } from 'react-router-dom'
@@ -11,7 +11,7 @@ import { AppStyle, AppBodyStyle, WorkaroundWrapperStyle } from './AppStyle'
 import { MenuBar } from './components/molecules'
 import { IntroWithLogo } from './components/organisms'
 
-const vh = window.innerHeight * 0.01
+let vh = window.innerHeight * 0.01
 document.documentElement.style.setProperty('--vh', `${vh}px`)
 
 const Routes = withRouter(() => (
@@ -19,7 +19,7 @@ const Routes = withRouter(() => (
     {!['/intro', '/login'].includes(history.location.pathname)
       && <MenuBar history={history} />}
     <WorkaroundWrapperStyle>
-      <AppBodyStyle>
+      <AppBodyStyle id="appBody">
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/create" component={Create} />
@@ -34,12 +34,27 @@ const Routes = withRouter(() => (
   </>
 ))
 
-const App = () => (
-  <AppStyle>
-    <Router history={history}>
-      <Routes />
-    </Router>
-  </AppStyle>
-)
+const App = () => {
+  useEffect(() => {
+    window.addEventListener('resize', updateVerticalHeight)
+
+    return () => {
+      window.removeEventListener('resize', updateVerticalHeight)
+    }
+  }, [])
+
+  const updateVerticalHeight = () => {
+    vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+  }
+
+  return (
+    <AppStyle>
+      <Router history={history}>
+        <Routes />
+      </Router>
+    </AppStyle>
+  )
+}
 
 export default observer(App)

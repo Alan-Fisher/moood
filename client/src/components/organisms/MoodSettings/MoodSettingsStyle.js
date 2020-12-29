@@ -9,8 +9,6 @@ export const MoodSettingsStyle = styled.div`
         flex-direction: column;
         align-items: center;
     }
-
-    ${({ isEditMode }) => isEditMode && 'background: light-yellow;'}
 `
 
 export const DateTimeSaveButtonStyle = styled.div`
