@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { observer } from 'mobx-react'
 import {
-  bool, func, object, shape,
+  bool, func, object,
 } from 'prop-types'
 import { Formik, Form, Field } from 'formik'
 
@@ -22,7 +22,17 @@ const MoodSettings = ({
 }) => {
   useEffect(() => {
     TagsModel.getFavoriteTags()
+
+    window.addEventListener('touchmove', blurInput)
+
+    return () => window.removeEventListener('touchmove', blurInput)
   }, [])
+
+  const blurInput = ({ target }) => {
+    if (target.id !== 'noteField') {
+      document.getElementById('noteField').blur()
+    }
+  }
 
   const [openedModal, setOpenedModal] = useState()
   const [isNoteFieldFocused, setNoteFocused] = useState()
@@ -119,6 +129,8 @@ const MoodSettings = ({
               size="lg"
               width="310px"
               name="note"
+              id="noteField"
+              // ref={noteFieldRef}
             />
             <DateTimeSaveButtonStyle>
               <Field

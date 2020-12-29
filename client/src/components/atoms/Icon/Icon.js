@@ -5,10 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import IconStyle from './IconStyle'
 
 const Icon = ({
-  icon, size, color, onClick, pointer, rotation, id, margin, title, width,
+  icon, size, color, onClick, onMouseDown, pointer, rotation, id, margin, title, width,
 }) => (
   <IconStyle
     onClick={onClick}
+    onMouseDown={onMouseDown}
     size={size}
     color={color}
     pointer={pointer}
@@ -23,6 +24,7 @@ const Icon = ({
 
 Icon.propTypes = {
   onClick: PropTypes.func, // eslint-disable-line react/require-default-props
+  onMouseDown: PropTypes.func, // eslint-disable-line react/require-default-props
   size: PropTypes.string,
   icon: PropTypes.shape({
     icon: PropTypes.array,

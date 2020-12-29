@@ -71,7 +71,7 @@ const Timeline = () => {
       {editingMoodId && (
         <FullModal closeModal={() => setEditingMoodId(null)}>
           <Icon
-            onClick={() => setEditingMoodId(null)}
+            onMouseDown={() => setEditingMoodId(null)}
             margin="5px 10px"
             size="30px"
             icon={faTimes}

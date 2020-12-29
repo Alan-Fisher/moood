@@ -72,7 +72,7 @@ const EmojiGroup = ({
         return (
           <EmojiGroupCellStyle
             isSelected={selectedIds.includes(id)}
-            onClick={() => handleClick(id, state)}
+            onMouseDown={() => handleClick(id, state)}
           >
             <EmojiWithText
               emoji={emoji}
