@@ -12,7 +12,11 @@ export const parseQueryString = (str) => {
 }
 
 export const transformDateForInput = (date) => {
-  const array = date.toLocaleDateString('en-US').split('/')
+  const array = date.toLocaleString('en-US', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).split('/')
   array.unshift(array.pop())
 
   return array.join('-')
