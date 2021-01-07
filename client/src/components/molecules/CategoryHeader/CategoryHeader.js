@@ -1,29 +1,45 @@
 import React from 'react'
 
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faAngleRight, faArrowsAltH } from '@fortawesome/free-solid-svg-icons'
 import { CategoryHeaderStyle, ExtendedStyle } from './CategoryHeaderStyle'
 import { Text, Icon } from '../../atoms'
 
 const CategoryHeader = ({
-  name, handleClick, isExtended,
-}) => (
-  <CategoryHeaderStyle onClick={handleClick}>
-    <Text inline size="xl">
-      {name}
-    </Text>
-    {handleClick
-    && (
-    <ExtendedStyle>
-      <Icon
-        inline
-        icon={faAngleDown}
-        size="21px"
-        rotation={isExtended ? '180' : '0'}
-      />
-    </ExtendedStyle>
-    )}
-  </CategoryHeaderStyle>
-)
+  name, handleClick, isExtended, isRanged,
+}) => {
+  const renderIcon = () => { // TODO: DRY
+    if (isExtended !== undefined) {
+      return (
+        <Icon
+          inline
+          icon={faAngleDown}
+          size="21px"
+          rotation={isExtended ? '180' : '0'}
+        />
+      )
+    }
+
+    if (isRanged !== undefined) {
+      return (
+        <Icon
+          inline
+          icon={faAngleRight}
+          size="21px"
+          rotation={isRanged ? '180' : '0'}
+        />
+      )
+    }
+  }
+
+  return (
+    <CategoryHeaderStyle onClick={handleClick}>
+      <Text inline size="xl">
+        {name}
+      </Text>
+      {renderIcon()}
+    </CategoryHeaderStyle>
+  )
+}
 
 CategoryHeader.propTypes = {
 }

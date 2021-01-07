@@ -16,6 +16,7 @@ import { ExtendedFeelings, ExtendedTags } from '..'
 import diaryData from '../../../common/diaryData.json'
 
 import { MoodSettingsStyle, DateTimeSaveButtonStyle, DividerStyle } from './MoodSettingsStyle'
+import { maxMoodLevel } from '../../../common/helpers'
 
 const MoodSettings = ({
   initialMoodDetails, submitMood, isEditMode,
@@ -34,9 +35,23 @@ const MoodSettings = ({
     }
   }
 
+  const isInitialMoodLevelRanged = () => {
+    const { moodLevel } = initialMoodDetails
+    try {
+      if (moodLevel - Math.floor(moodLevel) === 0.5) {
+        return true
+      }
+
+      return false
+    } catch {
+      return false
+    }
+  }
+
   const [openedModal, setOpenedModal] = useState()
   const [isNoteFieldFocused, setNoteFocused] = useState()
   const [extendedEmojis, setExtendedEmojis] = useState()
+  const [isMoodLevelRanged, setMoodLevelRanged] = useState(isInitialMoodLevelRanged())
   const { feelings, moodLevels } = diaryData
   const { favoriteTags } = TagsModel
 
@@ -68,6 +83,19 @@ const MoodSettings = ({
     document.getElementById(scrollableElementId).scroll({ top: 5000, behavior: 'smooth' })
   }
 
+  const switchMoodLevelRanged = (setFieldValue, currentMoodLevel) => {
+    let newMoodLevel = currentMoodLevel + 0.5 // TODO: beautify and move the logic of moodLevelRanged in one place
+    if (currentMoodLevel >= maxMoodLevel) {
+      newMoodLevel = currentMoodLevel - 0.5
+    }
+
+    if (isMoodLevelRanged) {
+      newMoodLevel = Math.floor(currentMoodLevel)
+    }
+    setFieldValue('moodLevel', newMoodLevel)
+    setMoodLevelRanged(!isMoodLevelRanged)
+  }
+
   const getShowingFavoriteFeelings = () => (extendedEmojis === 'feelings' ? feelings : feelings.slice(0, 9))
   const getShowingFavoriteTags = () => (extendedEmojis === 'tags' ? favoriteTags : favoriteTags.slice(0, 9))
 
@@ -81,11 +109,16 @@ const MoodSettings = ({
       >
         {({ handleSubmit, setFieldValue, values }) => (
           <Form>
-            <CategoryHeader name="How are you?" />
+            <CategoryHeader
+              handleClick={() => switchMoodLevelRanged(setFieldValue, values.moodLevel)}
+              isRanged={isMoodLevelRanged}
+              name="How are you?"
+            />
             <ChooseMoodLevel
-              emojis={moodLevels}
+              moodLevels={moodLevels}
               value={values.moodLevel}
               setFieldValue={setFieldValue}
+              isMoodLevelRanged={isMoodLevelRanged}
             />
             <DividerStyle />
             <CategoryHeader

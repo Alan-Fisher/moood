@@ -2,32 +2,32 @@
   "moodLevels": [
     {
       "emoji": "😫",
-      "id": -2,
+      "moodLevel": -2,
       "name": "Awful"
     },
     {
       "emoji": "🙁",
-      "id": -1,
+      "moodLevel": -1,
       "name": "Bad"
     },
     {
       "emoji": "😐",
-      "id": 0,
+      "moodLevel": 0,
       "name": "Neutral"
     },
     {
       "emoji": "🙂",
-      "id": 1,
+      "moodLevel": 1,
       "name": "Good"
     },
     {
       "emoji": "😃",
-      "id": 2,
+      "moodLevel": 2,
       "name": "Awesome"
     },
     {
       "emoji": "😎",
-      "id": 3,
+      "moodLevel": 3,
       "name": "God"
     }
   ],

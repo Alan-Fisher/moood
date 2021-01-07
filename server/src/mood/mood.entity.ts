@@ -6,12 +6,12 @@ import { User } from '../user/user.entity'
 @Entity({ name: 'mood' })
 export class Mood extends BaseEntity {
 
-  @Column()
+  @Column({ type: "float" })
   moodLevel: number
 
-  @Column("int", { array: true, nullable: true }) 
+  @Column("int", { array: true, nullable: true })
   feelingIds: number[]
-  
+
   @Column({ type: 'varchar', length: 2500, nullable: true })
   note: string
 

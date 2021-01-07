@@ -13,10 +13,40 @@ const Stats = () => { // TODO: refactor this gathered on the knee component
 
   const { moods } = MoodModel
 
-  const cases = {
+  const cases = { // TODO: oh shit it is temporary!
+    '-2': {
+      width: '40%',
+      transform: 'translate(0%, 0%)',
+      background: '#798EFF',
+      borderRadius: '5px 0 0 5px',
+    },
+    '-1.5': {
+      width: '30%',
+      transform: 'translate(33.8%, 0%)',
+      background: '#798EFF',
+      borderRadius: '5px 0 0 5px',
+    },
+    '-1': {
+      width: '20%',
+      transform: 'translate(100%, 0%)',
+      background: '#798EFF',
+      borderRadius: '5px 0 0 5px',
+    },
+    '-0.5': {
+      width: '10%',
+      transform: 'translate(301.8%, 0%)',
+      background: '#798EFF',
+      borderRadius: '5px 0 0 5px',
+    },
     0: {
       width: '4%',
-      transform: 'translate(1000%, 0%)',
+      transform: 'translate(1002.5%, 0%)',
+      background: '#12cc63',
+      borderRadius: '0 5px 5px 0',
+    },
+    0.5: {
+      width: '10%',
+      transform: 'translate(400%, 0%)',
       background: '#12cc63',
       borderRadius: '0 5px 5px 0',
     },
@@ -26,9 +56,21 @@ const Stats = () => { // TODO: refactor this gathered on the knee component
       background: '#12cc63',
       borderRadius: '0 5px 5px 0',
     },
+    1.5: {
+      width: '30%',
+      transform: 'translate(133.3%, 0%)',
+      background: '#12cc63',
+      borderRadius: '0 5px 5px 0',
+    },
     2: {
       width: '40%',
       transform: 'translate(100%, 0%)',
+      background: '#12cc63',
+      borderRadius: '0 5px 5px 0',
+    },
+    2.5: {
+      width: '50%',
+      transform: 'translate(80%, 0%)',
       background: '#12cc63',
       borderRadius: '0 5px 5px 0',
     },
@@ -38,19 +80,16 @@ const Stats = () => { // TODO: refactor this gathered on the knee component
       background: '#f06c0e',
       borderRadius: '0 5px 5px 0',
     },
-    '-1': {
-      width: '20%',
-      transform: 'translate(100%, 0%)',
-      background: '#798EFF',
-      borderRadius: '5px 0 0 5px',
-    },
-    '-2': {
-      width: '40%',
-      transform: 'translate(0%, 0%)',
-      background: '#798EFF',
-      borderRadius: '5px 0 0 5px',
-    },
   }
+
+  // const cases = {}
+  // const autoCases = Array(11).fill().map((_, i) => (i - 3) / 2 - 0.5)
+  //   .forEach(level => {
+  //     cases.level = {
+  //       width: `${Math.abs(level) * 20}%`,
+  //       transform: `translate(${}%, 0%)`
+  //     }
+  //   })
 
   const renderDateLabel = (createDateTime) => {
     const shouldShowYear = () => new Date().getFullYear() !== new Date(createDateTime).getFullYear()
@@ -108,7 +147,7 @@ const Stats = () => { // TODO: refactor this gathered on the knee component
                 left: 0,
                 height: '7px',
                 width: '4%',
-                transform: 'translate(900%, -100%)',
+                transform: 'translate(905%, -100%)',
                 background: '#798EFF',
                 borderRadius: '5px 0 0 5px',
               }}

@@ -5,6 +5,3 @@ export const CategoryHeaderStyle = styled.div`
   align-items: center;
   ${({ onClick }) => (onClick ? 'cursor: pointer;' : '')}
 `
-
-export const ExtendedStyle = styled.div`
-`
