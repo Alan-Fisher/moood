@@ -1,5 +1,5 @@
 import React from 'react'
-import { faTimesCircle, faCommentAlt } from '@fortawesome/free-solid-svg-icons'
+import { faTimesCircle, faCommentAlt, faArrowsAltH } from '@fortawesome/free-solid-svg-icons'
 import { diaryData, feelings } from '../../../common'
 
 import { MoodCardStyle } from './MoodCardStyle'
@@ -17,10 +17,34 @@ const MoodCard = ({ moodDetails, onClick }) => {
   const getEmoji = (id) => {
     const { moodLevels } = diaryData
 
-    return moodLevels.filter(item => item.id === id)[0]
+    return moodLevels.filter(item => item.moodLevel === id)[0]
   }
 
-  const { emoji, name } = getEmoji(moodLevel)
+  const renderMoodLevel = () => {
+    if (Number.isInteger(moodLevel)) {
+      const { emoji, name } = getEmoji(moodLevel)
+
+      return (
+        <Text size="xl">
+          {name}
+          <Emoji margin="0 0 0 5px" emoji={emoji} />
+        </Text>
+      )
+    }
+
+    const { emoji: firstEmoji, name: firstName } = getEmoji(Math.floor(moodLevel))
+    const { emoji: secondEmoji, name: secondName } = getEmoji(Math.ceil(moodLevel))
+
+    return (
+      <Text size="xl">
+        {firstName}
+        <Icon margin="5px" icon={faArrowsAltH} />
+        {secondName}
+        <Emoji margin="0 0 0 5px" emoji={firstEmoji} />
+        <Emoji margin="0 0 0 -10px" emoji={secondEmoji} />
+      </Text>
+    )
+  }
 
   const allFeelings = [...feelings.positive, ...feelings.negative]
   const feelingNamesById = {}
@@ -44,10 +68,7 @@ const MoodCard = ({ moodDetails, onClick }) => {
         pointer
         onClick={(e) => archiveMood(e)}
       />
-      <Text size="xl">
-        {name}
-        <Emoji margin="0 0 0 5px" emoji={emoji} />
-      </Text>
+      {renderMoodLevel()}
       <Text size="md">
         {new Date(Date.parse(createDateTime)).toLocaleString('ru', {
           day: 'numeric', month: 'long', hour: 'numeric', minute: 'numeric',
