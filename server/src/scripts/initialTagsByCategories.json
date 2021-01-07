@@ -1,0 +1,127 @@
+[
+  {
+    "name": "Activities",
+    "tags": [
+      {
+        "name": "Горы",
+        "emoji": "🏔",
+        "state": "favorite"
+      },
+      {
+        "name": "Прогулка",
+        "emoji": "🚶‍♂️",
+        "state": "favorite"
+      },
+      {
+        "name": "Треня",
+        "emoji": "🏋️",
+        "state": "favorite"
+      }
+    ]
+  },
+  {
+    "name": "Doings",
+    "tags": [
+      {
+        "name": "Залипание",
+        "emoji": "💩",
+        "state": "active"
+      },
+      {
+        "name": "Кино",
+        "emoji": "📽",
+        "state": "active"
+      },
+      {
+        "name": "Книжка",
+        "emoji": "📖",
+        "state": "favorite"
+      },
+      {
+        "name": "Музыка",
+        "emoji": "🎵",
+        "state": "half-favorite"
+      },
+      {
+        "name": "Покупки",
+        "emoji": "🛍",
+        "state": "active"
+      },
+      {
+        "name": "Прокрастинация",
+        "emoji": "🕳",
+        "state": "active"
+      }
+    ]
+  },
+  {
+    "name": "Health",
+    "tags": [
+      {
+        "name": "Болезнь",
+        "emoji": "🤒",
+        "state": "active"
+      },
+      {
+        "name": "Еда",
+        "emoji": "🍽",
+        "state": "active"
+      },
+      {
+        "name": "Пробуждение",
+        "emoji": "⏰",
+        "state": "favorite"
+      },
+      {
+        "name": "Сладкое",
+        "emoji": "🍰",
+        "state": "active"
+      },
+      {
+        "name": "Сон",
+        "emoji": "🛌",
+        "state": "half-favorite"
+      },
+      {
+        "name": "Фастфуд",
+        "emoji": "🌭",
+        "state": "active"
+      }
+    ]
+  },
+  {
+    "name": "Other",
+    "tags": [
+      {
+        "name": "Алкоголь",
+        "emoji": "🥃",
+        "state": "active"
+      },
+      {
+        "name": "Инсайт",
+        "emoji": "📕",
+        "state": "favorite"
+      },
+      {
+        "name": "Обучение",
+        "emoji": "🎓",
+        "state": "active"
+      },
+      {
+        "name": "Размышления",
+        "emoji": "💭",
+        "state": "half-favorite"
+      },
+      {
+        "name": "Финансы",
+        "emoji": "💵",
+        "state": "active"
+      }
+    ]
+  },
+  {
+    "name": "Social",
+    "tags": [
+    ]
+  }
+]

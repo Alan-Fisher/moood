@@ -11,8 +11,8 @@ import { UserService } from '../user/user.service'
 import { User } from '../user/user.entity'
 
 async function run() {
-  const tagsByCategories = await require("./alanTagsByCategories.json")
-  const user = { id: 1, username: '', email: '' } // TODO: add autosearch by email or better add autoseed on reg
+  const tagsByCategories = await require("./initialTagsByCategories.json")
+  const user = { id: 1, username: '', email: '' } // TODO: add autosearch by email or better add autoseed on signup
 
   const opt = {
     ...configService.getTypeOrmConfig(),
