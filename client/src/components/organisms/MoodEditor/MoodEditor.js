@@ -15,7 +15,6 @@ const MoodEditor = ({ moodId, closeMoodEditor }) => {
 
   const updateMood = (moodDetails) => {
     MoodModel.updateMood(moodId, moodDetails).then(() => {
-      MoodModel.getMoods()
       closeMoodEditor()
     })
   }

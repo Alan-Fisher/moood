@@ -53,7 +53,13 @@ export class MoodModel {
       url: `/moods/${id}`,
       params,
     })
-      .then()
+      .then(mood => {
+        const moods = [...this.moods]
+        const index = moods.findIndex(item => item.id === id)
+        moods[index] = mood
+
+        this.set('moods', moods)
+      })
       .catch()
   }
 
@@ -62,7 +68,13 @@ export class MoodModel {
       method: 'DELETE',
       url: `/moods/${id}`,
     })
-      .then(() => this.getMoods())
+      .then(() => {
+        const moods = [...this.moods]
+        const index = moods.findIndex(item => item.id === id)
+        moods.splice(index, 1)
+
+        this.set('moods', moods)
+      })
       .catch()
   }
 
