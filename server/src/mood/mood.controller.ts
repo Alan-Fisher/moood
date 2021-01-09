@@ -33,7 +33,7 @@ export class MoodController {
   public async post(
     @Body(new ValidationPipe({ transform: true })) dto: MoodDTO,
     @Req() req: any, // TODO: use decorator
-  ): Promise<MoodDTO> {
+  ): Promise<MoodRO> {
     const user = req.user as UserDTO
 
     return this.serv.create(MoodDTO.from(dto), user)
@@ -45,7 +45,7 @@ export class MoodController {
     @Param('id') id: number,
     @Body(new ValidationPipe({ transform: true })) dto: MoodDTO,
     @Req() req: any, // TODO: use decorator
-  ): Promise<string> {
+  ): Promise<MoodRO> {
     const user = req.user as UserDTO
 
     return this.serv.update(id, MoodDTO.from(dto), user)

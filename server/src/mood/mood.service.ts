@@ -34,7 +34,7 @@ export class MoodService {
     return mood
   }
 
-  public async create(dto: MoodDTO, { id }: UserDTO): Promise<MoodDTO> {
+  public async create(dto: MoodDTO, { id }: UserDTO): Promise<MoodRO> {
     const owner = await this.userService.findOne({ where: { id } })
     const tags = await this.tagsRepository.findByIds(dto.tagIds)
     const mood = {
@@ -44,26 +44,26 @@ export class MoodService {
     }
 
     return this.repo.save(mood)
-      .then(e => MoodDTO.fromEntity(e))
+      .then(e => MoodRO.fromEntity(e))
   }
 
-  public async update(id: number, dto: MoodDTO, { id: userId  }: UserDTO): Promise<string>  {
+  public async update(id: number, dto: MoodDTO, { id: userId }: UserDTO): Promise<MoodRO> {
     const mood = await this.repo.findOne({ where: { id, owner: { id: userId } } })
 
     if (!mood) {
       throw new HttpException('Not found', HttpStatus.NOT_FOUND)
     }
-    const {note, tagIds, feelingIds, createDateTime, moodLevel } = dto // eslint-disable-line
+    const { note, tagIds, feelingIds, createDateTime, moodLevel } = dto // eslint-disable-line
     const tags = await this.tagsRepository.findByIds(tagIds)
-    
-    mood.moodLevel = moodLevel 
+
+    mood.moodLevel = moodLevel
     mood.note = note
     mood.tags = tags
     mood.feelingIds = feelingIds
     mood.createDateTime = createDateTime
 
     return this.repo.save(mood)
-      .then(() => `${id} mood is updated`)
+      .then(e => MoodRO.fromEntity(e))
   }
 
   public async archive(id: number, { id: userId }: UserDTO): Promise<string> {
