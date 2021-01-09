@@ -56,12 +56,19 @@ export class MoodModel {
       .then(mood => {
         const moods = [...this.moods]
         const index = moods.findIndex(item => item.id === id)
-        moods[index] = mood
 
-        this.set('moods', moods)
+        if (this.isMoodPositionChanged(moods[index].createDateTime, mood.createDateTime)) {
+          this.getMoods()
+        } else {
+          moods[index] = mood
+
+          this.set('moods', moods)
+        }
       })
       .catch()
   }
+
+  isMoodPositionChanged = (currentDateTime, newDateTime) => currentDateTime !== newDateTime
 
   archiveMood(id) {
     return request({
@@ -71,7 +78,7 @@ export class MoodModel {
       .then(() => {
         const moods = [...this.moods]
         const index = moods.findIndex(item => item.id === id)
-        moods.splice(index, 1)
+        moods.splice(index, 1) // TODO: add catch
 
         this.set('moods', moods)
       })
