@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback } from 'react'
 import PropTypes from 'prop-types'
-import { FullModalStyle } from './FullModalStyle'
+import { FullModalStyle, BodyStyle } from './FullModalStyle'
 
 const FullModal = ({
   children, closeModal,
@@ -22,7 +22,9 @@ const FullModal = ({
 
   return (
     <FullModalStyle>
-      {children}
+      <BodyStyle>
+        {children}
+      </BodyStyle>
     </FullModalStyle>
   )
 }

@@ -1,17 +1,18 @@
 import React from 'react'
-import { faTimesCircle, faCommentAlt, faArrowsAltH } from '@fortawesome/free-solid-svg-icons'
+import {
+  faCommentAlt, faArrowsAltH,
+} from '@fortawesome/free-solid-svg-icons'
 import { diaryData, feelings } from '../../../common'
+import spinner from '../../../common/spinner.svg'
 
 import { MoodCardStyle } from './MoodCardStyle'
 import {
   Text, Icon, Tag, Emoji,
 } from '../../atoms'
 
-import { MoodModel } from '../../../models'
-
-const MoodCard = ({ moodDetails, onClick }) => {
+const MoodCard = ({ moodDetails, isLoading, onClick }) => {
   const {
-    id, note, moodLevel, createDateTime, feelingIds, tags,
+    note, moodLevel, createDateTime, feelingIds, tags,
   } = moodDetails
 
   const getEmoji = (id) => {
@@ -53,21 +54,20 @@ const MoodCard = ({ moodDetails, onClick }) => {
     feelingNamesById[id] = name
   })
 
-  const archiveMood = (e) => {
-    e.stopPropagation()
-    if (window.confirm('Delete mood?')) { // eslint-disable-line no-alert
-      MoodModel.archiveMood(id)
-    }
-  }
-
   return (
-    <MoodCardStyle onClick={() => onClick()}>
-      <Icon
-        icon={faTimesCircle}
-        size="20px"
-        pointer
-        onClick={(e) => archiveMood(e)}
+    <MoodCardStyle onClick={onClick}>
+      {isLoading && (
+      <img // TODO: beautify
+        style={{
+          width: '20px',
+          height: '20px',
+          position: 'absolute',
+          bottom: '10px',
+          right: '10px',
+        }}
+        src={spinner}
       />
+      )}
       {renderMoodLevel()}
       <Text size="md">
         {new Date(Date.parse(createDateTime)).toLocaleString('ru', {

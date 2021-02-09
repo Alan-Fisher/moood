@@ -13,10 +13,11 @@ import { parseQueryString } from '../../../common/helpers'
 
 const Login = ({ history }) => {
   const [formError, setFormError] = useState(undefined)
-  const onSubmit = ({ email, password }) => {
+  const onSubmit = ({ email, password }, setSubmitting) => {
     AuthModel.login(email, password)
       .then(() => handleRedirectAfterLogin())
       .catch(({ response }) => handleLoginError(response))
+      .finally(() => setSubmitting(false))
   }
 
   const handleLoginError = (response) => {
@@ -45,15 +46,14 @@ const Login = ({ history }) => {
           email: '',
           password: '',
         }}
-        onSubmit={(values) => onSubmit(values)}
+        onSubmit={(values, { setSubmitting }) => onSubmit(values, setSubmitting)}
       >
-        {({ errors, touched }) => (
+        {({ errors, touched, isSubmitting }) => (
           <Form>
             <Field
               as={Input}
               size="lg"
               width="310px"
-              // type="email"
               name="email"
               placeholder="Email"
               error={errors.email && touched.email}
@@ -71,6 +71,7 @@ const Login = ({ history }) => {
             <ButtonsStyle>
               <Text color="red">{formError}</Text>
               <Button
+                loading={isSubmitting}
                 inline
                 outlined
                 size="lg"

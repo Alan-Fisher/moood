@@ -63,7 +63,9 @@ const ButtonStyle = styled.button`
 ${({
     theme, inline, outlined, color, disabled, size, loading, margin, float,
   }) => `
+  
   margin: ${margin};
+  position: relative;
   ${float ? `float: ${float};` : ''} 
   outline: none;
   border-radius: 6px;
@@ -93,26 +95,7 @@ ${({
     box-shadow: ${displayBoxShadow(color)};
   }
 
-  ${disabled ? 'opacity: 0.65;' : ''}
-
-  ${loading ? `
-    background-size: 28px 28px;
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%,
-                      transparent 25%,
-                      transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
-                      transparent 75%, transparent);
-    animation: animate-stripes 1.5s linear infinite;
-
-    @keyframes animate-stripes {
-      0% { background-position: 0 0;}
-      100% { background-position: 60px 0;}
-    }
-  ` : ''}  
-
-  transition: 
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  ${disabled && !loading ? 'opacity: 0.65;' : ''}
   `}
 `
 

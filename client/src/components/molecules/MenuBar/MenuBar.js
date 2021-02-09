@@ -6,6 +6,7 @@ import {
 import { shape, func } from 'prop-types'
 import { MenuBarStyle, MenuItemStyle, MenuItemsStyle } from './MenuBarStyle'
 import { Icon, Text } from '../../atoms'
+import { MoodModel } from '../../../models'
 
 const MenuBar = ({ history }) => {
   const menuItems = [
@@ -25,7 +26,7 @@ const MenuBar = ({ history }) => {
           return (
             <MenuItemStyle
               key={route}
-              onClick={() => history.push(route)}
+              onClick={() => { MoodModel.clear(); history.push(route) }} // TODO: move model clear to
               isSelected={isSelected}
             >
               <Icon

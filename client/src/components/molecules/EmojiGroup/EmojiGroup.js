@@ -11,7 +11,7 @@ import { EmojiGroupStyle, EmojiGroupCellStyle, AddButtonStyle } from './EmojiGro
 import { Icon, Badge } from '../../atoms'
 
 const EmojiGroup = ({
-  emojis, selectedIds, setFieldValue, openModal, settingsMode, handleDelete,
+  emojis, selectedIds = [], setFieldValue, openModal, settingsMode, handleDelete,
   extraSelected, handleHalfFavorite, handleFavorite,
 }) => {
   const renderIcon = (state) => {

@@ -8,15 +8,12 @@ import { MoodModel } from '../../../models'
 import { transformDateForInput } from '../../../common/helpers'
 
 const MoodEditor = ({ moodId, closeMoodEditor }) => {
-  useEffect(() => {
-    MoodModel.getMood(moodId)
-  }, [moodId])
   const { mood } = MoodModel
 
-  const updateMood = (moodDetails) => {
-    MoodModel.updateMood(moodId, moodDetails).then(() => {
-      closeMoodEditor()
-    })
+  const updateMood = (moodDetails, setSubmitting) => {
+    MoodModel.updateMood(moodId, moodDetails)
+      .then(() => { closeMoodEditor() })
+      .finally(() => setSubmitting(false))
   }
 
   const getTransformedMoodDetails = () => {
@@ -49,11 +46,12 @@ const MoodEditor = ({ moodId, closeMoodEditor }) => {
   return (
     <MoodEditorStyle id="moodEditor">
       {initialMoodDetails && (
-        <MoodSettings
-          initialMoodDetails={initialMoodDetails}
-          submitMood={updateMood}
-          isEditMode
-        />
+      <MoodSettings
+        key={!!mood}
+        initialMoodDetails={initialMoodDetails}
+        submitMood={updateMood}
+        isEditMode
+      />
       )}
     </MoodEditorStyle>
   )

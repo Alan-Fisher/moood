@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Icon from '../Icon/Icon'
+import spinner from '../../../common/spinner.svg'
 
 import ButtonStyle from './ButtonStyle'
+import { Icon } from '..'
 
 const Button = ({
   children, size, type, icon, color, disabled, onClick, id, inline,
@@ -27,7 +28,7 @@ const Button = ({
   }
 
   return (
-    <ButtonStyle
+    <ButtonStyle // TODO: beautify
       success={success}
       error={error}
       id={id}
@@ -48,7 +49,29 @@ const Button = ({
           <Icon icon={icon} color={displayIconColor()} />
         </span>
       )}
-      {children}
+      <div style={loading ? { opacity: 0.2 } : {}}>
+        {children}
+      </div>
+      {loading
+        && (
+          <div
+            style={{
+              position: 'absolute',
+              left: '50%',
+              top: '50%',
+              transform: 'translate(-50%, -50%)',
+              height: '22px',
+            }}
+          >
+            <img
+              style={{
+                width: '22px',
+                height: '22px',
+              }}
+              src={spinner}
+            />
+          </div>
+        )}
     </ButtonStyle>
   )
 }

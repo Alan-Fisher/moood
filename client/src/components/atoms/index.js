@@ -17,3 +17,5 @@ export { default as FullModal } from './FullModal/FullModal'
 export { default as Tag } from './Tag/Tag'
 
 export { default as Badge } from './Badge/Badge'
+
+export { default as Space } from './Space/Space'

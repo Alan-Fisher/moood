@@ -23,6 +23,7 @@ const MoodSettings = ({
 }) => {
   useEffect(() => {
     TagsModel.getFavoriteTags()
+    TagsModel.getTagsByCategories()
 
     window.addEventListener('touchmove', blurInput)
 
@@ -36,8 +37,8 @@ const MoodSettings = ({
   }
 
   const isInitialMoodLevelRanged = () => {
-    const { moodLevel } = initialMoodDetails
     try {
+      const { moodLevel } = initialMoodDetails
       if (moodLevel - Math.floor(moodLevel) === 0.5) {
         return true
       }
@@ -55,18 +56,18 @@ const MoodSettings = ({
   const { feelings, moodLevels } = diaryData
   const { favoriteTags } = TagsModel
 
-  const onSubmit = (values) => { // TODO: heal date-time transformations in whole project
+  const onSubmit = (values, setSubmitting) => { // TODO: heal date-time transformations in whole project
     const { date, time, ...params } = values
     const timezoneSecondsOffset = new Date().getTimezoneOffset() * 1000 * 60 // Q: is reliable enough?
     params.createDateTime = new Date(Date.parse(`${date}T${time}:00.000Z`) + timezoneSecondsOffset) // TODO: beautify
-    submitMood(params)
+    submitMood(params, setSubmitting)
   }
 
-  const countHiddenSelections = (selectedIds, notHiddenItems) => {
+  const countHiddenSelections = (selectedIds = [], notHiddenItems) => {
     const notHiddenIds = notHiddenItems.map(item => item.id)
     const hiddenIds = selectedIds.filter(x => !notHiddenIds.includes(x))
 
-    return hiddenIds.length
+    return hiddenIds.length || 0
   }
 
   const onCategoryClick = (categoryName) => {
@@ -96,8 +97,12 @@ const MoodSettings = ({
     setMoodLevelRanged(!isMoodLevelRanged)
   }
 
+  const mockTags = [{}, {}, {}, {}, {}, {}, {}, {}, {}] // TODO: beautify and change loader approach
+
   const getShowingFavoriteFeelings = () => (extendedEmojis === 'feelings' ? feelings : feelings.slice(0, 9))
-  const getShowingFavoriteTags = () => (extendedEmojis === 'tags' ? favoriteTags : favoriteTags.slice(0, 9))
+  const getShowingFavoriteTags = () => (extendedEmojis === 'tags'
+    ? favoriteTags
+    : (favoriteTags || mockTags).slice(0, 9))
 
   return (
     <MoodSettingsStyle>
@@ -105,9 +110,11 @@ const MoodSettings = ({
         validateOnBlur={false}
         validateOnChange={false}
         initialValues={initialMoodDetails}
-        onSubmit={(values) => onSubmit(values)}
+        onSubmit={(values, { setSubmitting }) => onSubmit(values, setSubmitting)}
       >
-        {({ handleSubmit, setFieldValue, values }) => (
+        {({
+          handleSubmit, setFieldValue, setSubmitting, isSubmitting, values,
+        }) => (
           <Form>
             <CategoryHeader
               handleClick={() => switchMoodLevelRanged(setFieldValue, values.moodLevel)}
@@ -158,7 +165,7 @@ const MoodSettings = ({
               as={TextArea}
               onFocus={() => extendNoteField()}
               onBlur={() => setNoteFocused()}
-              rows={isNoteFieldFocused ? 6 : 1}
+              rows={isNoteFieldFocused ? 8 : 1}
               size="lg"
               width="310px"
               name="note"
@@ -183,8 +190,8 @@ const MoodSettings = ({
                 outlined
                 size="lg"
                 color="black"
-                // type="submit"
                 onMouseDown={() => handleSubmit()}
+                loading={isSubmitting}
               >
                 Save
               </Button>

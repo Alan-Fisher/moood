@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { faAngleDown, faAngleRight, faArrowsAltH } from '@fortawesome/free-solid-svg-icons'
-import { CategoryHeaderStyle, ExtendedStyle } from './CategoryHeaderStyle'
+import { faAngleDown, faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { CategoryHeaderStyle } from './CategoryHeaderStyle'
 import { Text, Icon } from '../../atoms'
 
 const CategoryHeader = ({

@@ -9,20 +9,21 @@ export const FullModalStyle = styled.div`
     /* background: black; // dark */
     background: white;
     z-index: 100;   
-
-    > span:first-child {
-        position: absolute;
-        top: 5px;
-        left: 5px;
-    }
+    display: flex;
+    justify-content: center;
 
     & {
         animation-duration: 0.5s;
         animation-name: slideFromRight;
     }
-    
+
     @keyframes slideFromRight {
         0% { top: 800px; opacity: 0% }
         100% { top: 0px; opacity: 100%}
-       }
+    }
+`
+
+export const BodyStyle = styled.div`
+    max-width: 500px;
+    width: 100%;
 `

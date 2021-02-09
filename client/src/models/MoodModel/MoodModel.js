@@ -17,13 +17,19 @@ export class MoodModel {
     mood: undefined,
   }
 
-  getMoods() {
+  getMoods(take, skip = 0) {
     return request({
       method: 'GET',
       url: '/moods',
+      params: {
+        take,
+        skip,
+      },
     })
-      .then(moods => this.set('moods', moods))
-      .catch()
+      .then(data => {
+        const moods = [...this.moods || [], ...data]
+        this.set('moods', moods)
+      })
   }
 
   getMood(id) {
@@ -53,7 +59,7 @@ export class MoodModel {
       url: `/moods/${id}`,
       params,
     })
-      .then(mood => {
+      .then(mood => { // TODO: move next lines to component?
         const moods = [...this.moods]
         const index = moods.findIndex(item => item.id === id)
 
@@ -87,6 +93,11 @@ export class MoodModel {
 
   hasProperty = key => Object.prototype.hasOwnProperty.call(this, key)
 
+  clear() {
+    this.set('moods', undefined)
+    this.set('mood', undefined)
+  }
+
   set(item, value) {
     if (this.hasProperty(item)) {
       this[item] = value
@@ -111,6 +122,7 @@ decorate(MoodModel, {
   getMoods: action,
   sendMood: action,
   archiveMood: action,
+  clear: action,
 })
 
 export default new MoodModel()

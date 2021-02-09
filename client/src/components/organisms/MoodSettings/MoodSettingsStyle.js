@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 export const MoodSettingsStyle = styled.div`
     padding-top: 10px;
     margin: auto 0;
+
     > form {
         text-align: center;
         display: flex;

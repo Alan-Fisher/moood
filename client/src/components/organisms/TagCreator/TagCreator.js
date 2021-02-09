@@ -10,13 +10,10 @@ import { Button, Input } from '../../atoms'
 import { TagsModel } from '../../../models'
 
 const TagCreator = ({ categoryId, closeModal }) => {
-  const onSubmit = (values) => {
-    try {
-      TagsModel.createTag(values, categoryId)
-    } catch {
-      throw new Error()
-    }
-    closeModal()
+  const onSubmit = (values, setSubmitting) => {
+    TagsModel.createTag(values, categoryId)
+      .then(() => { closeModal() })
+      .finally(() => setSubmitting(false))
   }
 
   return (
@@ -35,9 +32,9 @@ const TagCreator = ({ categoryId, closeModal }) => {
           emoji: '',
           name: '',
         }}
-        onSubmit={(values) => onSubmit(values)}
+        onSubmit={(values, { setSubmitting }) => onSubmit(values, setSubmitting)}
       >
-        {({ errors, touched }) => (
+        {({ errors, touched, isSubmitting }) => (
           <Form>
             <Field
               as={Input}
@@ -72,6 +69,7 @@ const TagCreator = ({ categoryId, closeModal }) => {
                 size="lg"
                 color="black"
                 type="submit"
+                loading={isSubmitting}
               >
                 Save
               </Button>

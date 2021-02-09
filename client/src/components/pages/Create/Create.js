@@ -20,8 +20,10 @@ const Create = ({ history }) => {
     }),
   }
 
-  const sendMood = (moodDetails) => {
-    MoodModel.sendMood(moodDetails).then(() => history.push('/timeline'))
+  const sendMood = (moodDetails, setSubmitting) => {
+    MoodModel.sendMood(moodDetails)
+      .then(() => history.push('/timeline'))
+      .finally(() => setSubmitting(false))
   }
 
   return (

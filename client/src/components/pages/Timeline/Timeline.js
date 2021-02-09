@@ -2,26 +2,43 @@ import React, { useEffect, useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import {
+  faChevronLeft, faTrashAlt,
+} from '@fortawesome/free-solid-svg-icons'
 import { MoodModel } from '../../../models'
+import spinner from '../../../common/spinner.svg'
 
 import { TimelineStyle, CardsStyle } from './TimelineStyle'
 import { MoodCard, MoodEditor } from '../../organisms'
 import {
-  Text, Badge, FullModal, Icon,
+  Text, Badge, FullModal, Icon, Button, Link, Space,
 } from '../../atoms'
 
 const Timeline = () => {
-  useEffect(() => {
-    MoodModel.getMoods()
-  }, [])
   const [editingMoodId, setEditingMoodId] = useState(null)
+  const [page, setPage] = useState(1)
+
+  useEffect(() => {
+    const moodsOnPage = 100
+    const loadedMoods = moodsOnPage * (page - 1)
+    MoodModel.getMoods(moodsOnPage, loadedMoods)
+  }, [page])
 
   const { moods } = MoodModel
 
+  const openMoodEditor = (moodId) => {
+    setEditingMoodId(moodId)
+    MoodModel.getMood(moodId)
+  }
+
   const renderDateLabel = (createDateTime) => {
     const shouldShowYear = () => new Date().getFullYear() !== new Date(createDateTime).getFullYear()
-    const localCreateDate = new Date(createDateTime).toLocaleString('ru', { day: 'numeric', month: 'long', year: shouldShowYear() ? 'numeric' : undefined })
+    const localCreateDate = new Date(createDateTime)
+      .toLocaleString('ru', {
+        day: 'numeric',
+        month: 'long',
+        year: shouldShowYear() ? 'numeric' : undefined,
+      })
 
     return (
       <Badge margin="0px auto 7px">
@@ -49,16 +66,33 @@ const Timeline = () => {
             <MoodCard
               key={id}
               moodDetails={moodDetails}
-              onClick={() => setEditingMoodId(id)}
+              onClick={() => openMoodEditor(id)}
+              isLoading={id === editingMoodId}
             />
           </>
         )
       })
     }
 
-    if (moods?.length === 0) { return <Text size="xl">Нет записей</Text> }
+    if (moods?.length === 0) { return <Text size="xl">No moods</Text> }
 
-    return <Text size="xl">Загрузка...</Text>
+    return (
+      <img // TODO: beautify
+        style={{
+          paddingTop: '150px',
+          width: '50px',
+          height: '50px',
+        }}
+        src={spinner}
+      />
+    )
+  }
+
+  const archiveMood = (moodId) => {
+    if (window.confirm('Delete mood?')) { // eslint-disable-line no-alert
+      MoodModel.archiveMood(moodId)
+        .then(() => setEditingMoodId(null))
+    }
   }
 
   return (
@@ -66,17 +100,38 @@ const Timeline = () => {
       <TimelineStyle>
         <CardsStyle>
           {renderCards()}
+          {moods?.length > 0
+            && (
+              <Button
+                outlined
+                color="black"
+                onClick={() => setPage(page + 1)}
+              >
+                Load more
+              </Button>
+            )}
         </CardsStyle>
       </TimelineStyle>
-      {editingMoodId && (
+      {editingMoodId && MoodModel.mood && (
         <FullModal closeModal={() => setEditingMoodId(null)}>
-          <Icon
-            onMouseDown={() => setEditingMoodId(null)}
-            margin="5px 10px"
-            size="30px"
-            icon={faTimes}
-            pointer
-          />
+          <Space style={{ padding: '15px 15px 0' }}>
+            <Space onClick={() => setEditingMoodId(null)}>
+              <Icon
+                margin="0px 5px"
+                size="25px"
+                icon={faChevronLeft}
+                pointer
+              />
+              <Link color="black" size="lg">Back</Link>
+            </Space>
+            <Icon
+              onClick={() => archiveMood(editingMoodId)}
+              margin="5px 5px"
+              size="20px"
+              icon={faTrashAlt}
+              pointer
+            />
+          </Space>
           <MoodEditor
             closeMoodEditor={() => setEditingMoodId(null)}
             moodId={editingMoodId}

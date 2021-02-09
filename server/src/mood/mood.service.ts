@@ -15,11 +15,20 @@ export class MoodService {
     private readonly userService: UserService,
   ) { }
 
-  public async getAll({ id }: UserDTO): Promise<MoodRO[]> {
+  public async getAll({ id }: UserDTO, take: number, skip: number): Promise<MoodRO[]> {
+    console.log({
+      // where: { owner: { id }, isArchived: false },
+      // relations: ['tags'],
+      // order: { createDateTime: 'DESC' },
+      take,
+      skip,
+    })
     const moods = await this.repo.find({
       where: { owner: { id }, isArchived: false },
       relations: ['tags'],
-      order: { createDateTime: 'DESC' }
+      order: { createDateTime: 'DESC' },
+      take,
+      skip,
     })
 
     return moods

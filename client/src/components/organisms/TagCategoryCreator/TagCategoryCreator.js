@@ -8,13 +8,10 @@ import { Button, Input } from '../../atoms'
 import { TagsModel } from '../../../models'
 
 const TagCategoryCreator = ({ closeModal }) => {
-  const onSubmit = (name) => {
-    try {
-      TagsModel.createTagCategory(name)
-    } catch {
-      throw new Error()
-    }
-    closeModal()
+  const onSubmit = (name, setSubmitting) => {
+    TagsModel.createTagCategory(name)
+      .then(() => { closeModal() })
+      .finally(() => setSubmitting(false))
   }
 
   return (
@@ -25,9 +22,9 @@ const TagCategoryCreator = ({ closeModal }) => {
         validateOnChange={false}
         validationSchema={Yup.object().shape({ name: Yup.string().required('Required') })}
         initialValues={{ name: '' }}
-        onSubmit={({ name }) => onSubmit(name)}
+        onSubmit={({ name }, { setSubmitting }) => onSubmit(name, setSubmitting)}
       >
-        {({ errors, touched }) => (
+        {({ errors, touched, isSubmitting }) => (
           <Form>
             <Field
               as={Input}
@@ -54,6 +51,7 @@ const TagCategoryCreator = ({ closeModal }) => {
                 size="lg"
                 color="black"
                 type="submit"
+                loading={isSubmitting}
               >
                 Save
               </Button>

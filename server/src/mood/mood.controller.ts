@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types*/
-import { Controller, Get, Patch, Post, Delete, Body, ValidationPipe, Param, UseGuards, Req } from '@nestjs/common'
+import { Controller, Get, Patch, Post, Delete, Body, ValidationPipe, Param, UseGuards, Req, Query } from '@nestjs/common'
 import { MoodService } from './mood.service'
 import { MoodDTO, MoodRO } from './mood.dto'
 import { AuthGuard } from '@nestjs/passport'
@@ -11,10 +11,14 @@ export class MoodController {
 
   @Get()
   @UseGuards(AuthGuard())
-  public async getAll(@Req() req: any): Promise<MoodRO[]> {
+  public async getAll(
+    @Req() req: any,
+    @Query('take') take: number,
+    @Query('skip') skip: number,
+  ): Promise<MoodRO[]> {
     const user = req.user as UserDTO
 
-    return await this.serv.getAll(user)
+    return await this.serv.getAll(user, take, skip)
   }
 
   @Get(':id')

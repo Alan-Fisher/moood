@@ -13,7 +13,7 @@ export class TagsModel {
   }
 
   initialState = {
-    favoriteTags: [], // TODO add loader
+    favoriteTags: undefined,
     tagsByCategories: undefined,
   }
 

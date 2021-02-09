@@ -2,16 +2,15 @@ import styled from 'styled-components/macro'
 
 export const TimelineStyle = styled.div`
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow-y: auto;
+  display: block;
   -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
 `
 
 export const CardsStyle = styled.div`
   display: flex;
   flex-flow: column;
+  align-items: center;
   position: relative;
   padding: 15px 10px;
   overflow-x: hidden;
