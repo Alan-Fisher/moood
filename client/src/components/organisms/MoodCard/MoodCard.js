@@ -59,11 +59,11 @@ const MoodCard = ({ moodDetails, isLoading, onClick }) => {
       {isLoading
         && (
           <Spinner
-            size={12}
+            size={15}
             style={{
               position: 'absolute',
-              top: '10px',
-              right: '10px',
+              top: '20px',
+              right: '20px',
             }}
           />
         )}
