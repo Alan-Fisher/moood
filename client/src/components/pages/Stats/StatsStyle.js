@@ -4,6 +4,9 @@ export const StatsStyle = styled.div`
   height: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const LineStyle = styled.div`

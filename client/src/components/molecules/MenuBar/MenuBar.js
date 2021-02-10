@@ -15,6 +15,12 @@ const MenuBar = ({ history }) => {
     { icon: faChartPie, name: 'Stats', route: '/stats' },
     { icon: faCog, name: 'Settings', route: '/settings' },
   ]
+  const handleMenuItemClick = (route) => {
+    if (route !== history.location.pathname) {
+      MoodModel.clear()
+      history.push(route)
+    }
+  }
 
   return (
     <MenuBarStyle>
@@ -26,7 +32,7 @@ const MenuBar = ({ history }) => {
           return (
             <MenuItemStyle
               key={route}
-              onClick={() => { MoodModel.clear(); history.push(route) }} // TODO: move model clear to
+              onClick={() => handleMenuItemClick(route)} // TODO: move model clear to
               isSelected={isSelected}
             >
               <Icon

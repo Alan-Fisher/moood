@@ -19,3 +19,5 @@ export { default as Tag } from './Tag/Tag'
 export { default as Badge } from './Badge/Badge'
 
 export { default as Space } from './Space/Space'
+
+export { default as Spinner } from './Spinner/Spinner'

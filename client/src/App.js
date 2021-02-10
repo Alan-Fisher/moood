@@ -13,6 +13,7 @@ import { IntroWithLogo } from './components/organisms'
 
 let vh = window.innerHeight * 0.01
 document.documentElement.style.setProperty('--vh', `${vh}px`)
+window.initialHeight = vh
 
 const Routes = withRouter(() => (
   <>
@@ -43,8 +44,9 @@ const App = () => {
     }
   }, [])
 
-  const updateVerticalHeight = () => {
-    vh = window.innerHeight * 0.01
+  const updateVerticalHeight = () => { // TODO: rethink with a fresh look
+    const { innerHeight, orientation, initialHeight } = window
+    vh = [90, -90, undefined].includes(orientation) ? innerHeight * 0.01 : initialHeight
     document.documentElement.style.setProperty('--vh', `${vh}px`)
   }
 

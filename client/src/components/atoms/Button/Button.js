@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import spinner from '../../../common/spinner.svg'
 
 import ButtonStyle from './ButtonStyle'
-import { Icon } from '..'
+import { Icon, Spinner } from '..'
 
 const Button = ({
   children, size, type, icon, color, disabled, onClick, id, inline,
@@ -44,14 +44,6 @@ const Button = ({
       margin={margin}
       float={float}
     >
-      {icon && (
-        <span className="button_icon">
-          <Icon icon={icon} color={displayIconColor()} />
-        </span>
-      )}
-      <div style={loading ? { opacity: 0.2 } : {}}>
-        {children}
-      </div>
       {loading
         && (
           <div
@@ -60,18 +52,20 @@ const Button = ({
               left: '50%',
               top: '50%',
               transform: 'translate(-50%, -50%)',
-              height: '22px',
+              zIndex: '-10',
             }}
           >
-            <img
-              style={{
-                width: '22px',
-                height: '22px',
-              }}
-              src={spinner}
-            />
+            <Spinner size={16} />
           </div>
         )}
+      {icon && (
+        <span className="button_icon">
+          <Icon icon={icon} color={displayIconColor()} />
+        </span>
+      )}
+      <div style={loading ? { opacity: 0.2 } : {}}>
+        {children}
+      </div>
     </ButtonStyle>
   )
 }

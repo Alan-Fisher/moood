@@ -22,4 +22,5 @@ export const MenuItemStyle = styled.div`
   /* ${({ isSelected }) => (isSelected ? 'background: #363636;' : '')} // dark */
   ${({ isSelected }) => (isSelected ? 'background: #444;' : '')} 
   padding: 7px 8px;
+  cursor: pointer;
 `

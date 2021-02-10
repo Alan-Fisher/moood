@@ -7,7 +7,9 @@ import { func, shape } from 'prop-types'
 import {
   LoginStyle, ButtonsStyle,
 } from './LoginStyle'
-import { Button, Input, Text } from '../../atoms'
+import {
+  Button, Input, Text,
+} from '../../atoms'
 import { AuthModel } from '../../../models'
 import { parseQueryString } from '../../../common/helpers'
 

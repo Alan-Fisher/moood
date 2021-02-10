@@ -4,7 +4,7 @@ import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
 import { StatsStyle } from './StatsStyle'
 import { MoodModel } from '../../../models'
-import { Badge, Text } from '../../atoms'
+import { Badge, Spinner, Text } from '../../atoms'
 
 const Stats = () => { // TODO: refactor this gathered on the knee component
   useEffect(() => {
@@ -82,65 +82,55 @@ const Stats = () => { // TODO: refactor this gathered on the knee component
     },
   }
 
-  // const cases = {}
-  // const autoCases = Array(11).fill().map((_, i) => (i - 3) / 2 - 0.5)
-  //   .forEach(level => {
-  //     cases.level = {
-  //       width: `${Math.abs(level) * 20}%`,
-  //       transform: `translate(${}%, 0%)`
-  //     }
-  //   })
-
   const renderDateLabel = (createDateTime) => {
     const shouldShowYear = () => new Date().getFullYear() !== new Date(createDateTime).getFullYear()
     const localCreateDate = new Date(createDateTime)
-      .toLocaleString('ru', { day: 'numeric', month: 'long', year: shouldShowYear() ? 'numeric' : undefined })
+      .toLocaleString('en', { day: 'numeric', month: 'long', year: shouldShowYear() ? 'numeric' : undefined })
 
     return (
       <Badge
         size="sm"
-        color="#AAA"
         margin="15px 5px 0px 7px"
       >
         <Text
-          // margin="15px 5px 0px 7px"
           color="white"
           size="sm"
         >
           {localCreateDate}
-
         </Text>
       </Badge>
     )
   }
 
-  const renderStats = () => moods?.map((moodDetails, idx) => {
-    const { createDateTime, moodLevel } = moodDetails
-    const addLineStyle = cases[moodLevel] || {}
+  const renderStats = () => {
+    if (moods?.length > 0) {
+      const renderedStats = moods.map((moodDetails, idx) => {
+        const { createDateTime, moodLevel } = moodDetails
+        const addLineStyle = cases[moodLevel] || {}
 
-    const isFirstNoteForDate = () => {
-      const toDateString = (dateTime) => new Date(dateTime).toDateString()
-      const createDate = toDateString(createDateTime)
-      const prevCreateDate = toDateString(moods[idx - 1]?.createDateTime)
+        const isFirstNoteForDate = () => {
+          const toDateString = (dateTime) => new Date(dateTime).toDateString()
+          const createDate = toDateString(createDateTime)
+          const prevCreateDate = toDateString(moods[idx - 1]?.createDateTime)
 
-      return createDate !== prevCreateDate
-    }
+          return createDate !== prevCreateDate
+        }
 
-    return (
-      <>
-        {isFirstNoteForDate() && renderDateLabel(createDateTime)}
-        <div style={{
-          borderRadius: '4px', margin: '8px', background: '#eee', height: '7px',
-        }}
-        >
-          <div style={{
-            zIndex: 20,
-            left: 0,
-            height: '7px',
-            ...addLineStyle,
-          }}
-          />
-          {moodLevel === 0
+        return (
+          <>
+            {isFirstNoteForDate() && renderDateLabel(createDateTime)}
+            <div style={{
+              borderRadius: '4px', margin: '8px', background: '#eee', height: '7px',
+            }}
+            >
+              <div style={{
+                zIndex: 20,
+                left: 0,
+                height: '7px',
+                ...addLineStyle,
+              }}
+              />
+              {moodLevel === 0
             && (
               <div style={{
                 zIndex: 20,
@@ -153,10 +143,24 @@ const Stats = () => { // TODO: refactor this gathered on the knee component
               }}
               />
             )}
-        </div>
-      </>
+            </div>
+          </>
+        )
+      })
+
+      return <div style={{ width: '100%' }}>{renderedStats}</div>
+    }
+
+    if (moods?.length === 0) { return <Text size="xl">No moods</Text> }
+
+    return (
+      <Spinner
+        style={{
+          paddingTop: '200px',
+        }}
+      />
     )
-  })
+  }
 
   return (
     <StatsStyle>

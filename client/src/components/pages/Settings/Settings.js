@@ -13,6 +13,7 @@ const Settings = () => (
       onClick={() => AuthModel.logout()}
       outlined
       color="black"
+      size="lg"
     >
       Log out
     </Button>
@@ -21,6 +22,7 @@ const Settings = () => (
       onClick={() => window.location.reload()}
       outlined
       color="black"
+      size="lg"
     >
       Refresh PWA
     </Button>

@@ -7,7 +7,7 @@ import spinner from '../../../common/spinner.svg'
 
 import { MoodCardStyle } from './MoodCardStyle'
 import {
-  Text, Icon, Tag, Emoji,
+  Text, Icon, Tag, Emoji, Spinner,
 } from '../../atoms'
 
 const MoodCard = ({ moodDetails, isLoading, onClick }) => {
@@ -56,21 +56,20 @@ const MoodCard = ({ moodDetails, isLoading, onClick }) => {
 
   return (
     <MoodCardStyle onClick={onClick}>
-      {isLoading && (
-      <img // TODO: beautify
-        style={{
-          width: '20px',
-          height: '20px',
-          position: 'absolute',
-          bottom: '10px',
-          right: '10px',
-        }}
-        src={spinner}
-      />
-      )}
+      {isLoading
+        && (
+          <Spinner
+            size={12}
+            style={{
+              position: 'absolute',
+              top: '10px',
+              right: '10px',
+            }}
+          />
+        )}
       {renderMoodLevel()}
       <Text size="md">
-        {new Date(Date.parse(createDateTime)).toLocaleString('ru', {
+        {new Date(Date.parse(createDateTime)).toLocaleString('en-GB', {
           day: 'numeric', month: 'long', hour: 'numeric', minute: 'numeric',
         })}
       </Text>

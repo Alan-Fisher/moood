@@ -6,22 +6,24 @@ import {
   faChevronLeft, faTrashAlt,
 } from '@fortawesome/free-solid-svg-icons'
 import { MoodModel } from '../../../models'
-import spinner from '../../../common/spinner.svg'
 
 import { TimelineStyle, CardsStyle } from './TimelineStyle'
 import { MoodCard, MoodEditor } from '../../organisms'
 import {
-  Text, Badge, FullModal, Icon, Button, Link, Space,
+  Text, Badge, FullModal, Icon, Button, Link, Space, Spinner,
 } from '../../atoms'
 
 const Timeline = () => {
   const [editingMoodId, setEditingMoodId] = useState(null)
   const [page, setPage] = useState(1)
+  const [isLoading, setLoading] = useState(false)
 
   useEffect(() => {
     const moodsOnPage = 100
     const loadedMoods = moodsOnPage * (page - 1)
+    setLoading(true)
     MoodModel.getMoods(moodsOnPage, loadedMoods)
+      .finally(() => setLoading(false))
   }, [page])
 
   const { moods } = MoodModel
@@ -34,7 +36,7 @@ const Timeline = () => {
   const renderDateLabel = (createDateTime) => {
     const shouldShowYear = () => new Date().getFullYear() !== new Date(createDateTime).getFullYear()
     const localCreateDate = new Date(createDateTime)
-      .toLocaleString('ru', {
+      .toLocaleString('en', {
         day: 'numeric',
         month: 'long',
         year: shouldShowYear() ? 'numeric' : undefined,
@@ -77,13 +79,10 @@ const Timeline = () => {
     if (moods?.length === 0) { return <Text size="xl">No moods</Text> }
 
     return (
-      <img // TODO: beautify
+      <Spinner
         style={{
-          paddingTop: '150px',
-          width: '50px',
-          height: '50px',
+          paddingTop: '185px',
         }}
-        src={spinner}
       />
     )
   }
@@ -106,6 +105,7 @@ const Timeline = () => {
                 outlined
                 color="black"
                 onClick={() => setPage(page + 1)}
+                loading={isLoading}
               >
                 Load more
               </Button>
