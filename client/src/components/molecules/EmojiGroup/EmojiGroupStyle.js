@@ -57,7 +57,6 @@ export const EmojiGroupCellStyle = styled.div`
   ${({ isSelected }) => (isSelected ? 'background: #f4f4f4' : '')}; 
   border-radius: 6px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  min-height: 59px;
 
   >span {
     position: absolute;

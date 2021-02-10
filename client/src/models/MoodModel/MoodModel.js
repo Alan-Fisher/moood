@@ -17,7 +17,7 @@ export class MoodModel {
     mood: undefined,
   }
 
-  getMoods(take, skip = 0) {
+  getMoods(take, skip = 0, update) {
     return request({
       method: 'GET',
       url: '/moods',
@@ -28,7 +28,7 @@ export class MoodModel {
     })
       .then(data => {
         const moods = [...this.moods || [], ...data]
-        this.set('moods', moods)
+        this.set('moods', !update ? moods : data)
       })
   }
 
@@ -64,7 +64,8 @@ export class MoodModel {
         const index = moods.findIndex(item => item.id === id)
 
         if (this.isMoodPositionChanged(moods[index].createDateTime, mood.createDateTime)) {
-          this.getMoods()
+          this.set('moods', undefined)
+          this.getMoods(100, 0) // TODO: hardcoded?
         } else {
           moods[index] = mood
 
