@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import spinner from '../../../common/spinner.svg'
-
 import ButtonStyle from './ButtonStyle'
 import { Icon, Spinner } from '..'
 

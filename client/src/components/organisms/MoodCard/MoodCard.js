@@ -3,7 +3,6 @@ import {
   faCommentAlt, faArrowsAltH,
 } from '@fortawesome/free-solid-svg-icons'
 import { diaryData, feelings } from '../../../common'
-import spinner from '../../../common/spinner.svg'
 
 import { MoodCardStyle } from './MoodCardStyle'
 import {
