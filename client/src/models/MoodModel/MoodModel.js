@@ -17,7 +17,7 @@ export class MoodModel {
     mood: undefined,
   }
 
-  getMoods(take, skip = 0, update) {
+  getMoods(take, skip = 0) {
     return request({
       method: 'GET',
       url: '/moods',
@@ -28,7 +28,7 @@ export class MoodModel {
     })
       .then(data => {
         const moods = [...this.moods || [], ...data]
-        this.set('moods', !update ? moods : data)
+        this.set('moods', moods)
       })
   }
 

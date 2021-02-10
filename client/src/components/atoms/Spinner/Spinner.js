@@ -3,7 +3,7 @@ import React from 'react'
 
 import SpinnerStyle from './SpinnerStyle'
 
-const Spinner = ({ size, style }) => (
+const Spinner = ({ size, style }) => ( // TODO: beautify
   <SpinnerStyle size={size} style={style}>
     <div id="cs-loader">
       <div className="cs-inner-body" />

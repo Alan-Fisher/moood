@@ -17,7 +17,7 @@ const MenuBar = ({ history }) => {
   ]
   const handleMenuItemClick = (route) => {
     if (route !== history.location.pathname) {
-      MoodModel.clear()
+      MoodModel.clear() // TODO: move model clear to
       history.push(route)
     }
   }
@@ -32,7 +32,7 @@ const MenuBar = ({ history }) => {
           return (
             <MenuItemStyle
               key={route}
-              onClick={() => handleMenuItemClick(route)} // TODO: move model clear to
+              onClick={() => handleMenuItemClick(route)}
               isSelected={isSelected}
             >
               <Icon
