@@ -11,7 +11,6 @@ export const MenuItemsStyle = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  transition: all 0.5s ease-in;
 `
 
 export const MenuItemStyle = styled.div`

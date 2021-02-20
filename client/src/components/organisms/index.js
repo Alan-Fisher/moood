@@ -13,3 +13,7 @@ export { default as TagCategoryCreator } from './TagCategoryCreator/TagCategoryC
 export { default as MoodSettings } from './MoodSettings/MoodSettings'
 
 export { default as MoodEditor } from './MoodEditor/MoodEditor'
+
+export { default as TagsStats } from './TagsStats/TagsStats'
+
+export { default as TimelineStats } from './TimelineStats/TimelineStats'

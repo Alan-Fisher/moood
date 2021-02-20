@@ -114,7 +114,7 @@ const Timeline = () => {
       </TimelineStyle>
       {editingMoodId && MoodModel.mood && (
         <FullModal closeModal={() => setEditingMoodId(null)}>
-          <Space style={{ padding: '15px 15px 0' }}>
+          <Space style={{ padding: '15px 15px 0', justifyContent: 'space-between' }}>
             <Space onClick={() => setEditingMoodId(null)}>
               <Icon
                 margin="0px 5px"
