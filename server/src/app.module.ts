@@ -8,6 +8,7 @@ import { TagModule } from './tag/tag.module'
 import { TagCategoryModule } from './tagCategory/tagCategory.module'
 import { UserModule } from './user/user.module'
 import { AuthModule } from './auth/auth.module'
+import { ABModule } from './ab/ab.module'
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { AuthModule } from './auth/auth.module'
     TagCategoryModule,
     UserModule,
     AuthModule,
+    ABModule,
   ],
   controllers: [AppController],
   providers: [AppService],
