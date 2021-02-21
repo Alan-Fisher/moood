@@ -7,4 +7,6 @@ export const MoodCardStyle = styled.div`
   border: 1px solid #888;
   border-radius: 6px;
   padding: 15px;
+  background: white;
+  z-index: 25;
 `

@@ -32,6 +32,7 @@ const BadgeStyle = styled.span`
   border-radius: 20px;
   line-height: 20px;
   display: inline-block;
+  user-select: none;
 
   font-family: ${({ theme }) => theme.fontFamily};
   font-weight: ${({ theme }) => theme.fontWeights.medium};

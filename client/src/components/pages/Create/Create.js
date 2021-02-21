@@ -22,7 +22,10 @@ const Create = ({ history }) => {
 
   const sendMood = (moodDetails, setSubmitting) => {
     MoodModel.sendMood(moodDetails)
-      .then(() => history.push('/timeline'))
+      .then(() => {
+        localStorage.removeItem('moodDraft')
+        history.push('/timeline')
+      })
       .finally(() => setSubmitting(false))
   }
 

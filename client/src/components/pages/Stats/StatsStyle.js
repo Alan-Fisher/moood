@@ -7,20 +7,61 @@ export const StatsStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  scroll-behavior: smooth;
+`
+
+export const LineBackgroundStyle = styled.div`
+  border-radius: 4px; 
+  margin: 8px; 
+  height: 7px; 
+  position: relative;
+  background: ${({ isActive }) => (isActive ? '#ddd' : '#eee')}; 
 `
 
 export const LineStyle = styled.div`
-  margin: 5px;
-  background: #ddd;
+  z-index: 20;
+  position: absolute;
+  height: 7px;
+`
+
+export const LineInfoStyle = styled.div`
+  z-index: 20;
+  bottom: -6px;
+  left: -3px;
+  position: absolute;
+  display: flex;
   width: 100%;
-  height: 3px;
-  
-  > div { 
-    z-index: 20;
+  justify-content: space-between;
+`
+
+export const FeelingsLineStyle = styled.div`
+  z-index: 10;
+  position: absolute;
+  height: 1px;
+  bottom: 3px;
+
+  ${({ isPositive }) => (isPositive ? `
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0px;
+      bottom: -1px;
+      height: 3px;
+      width: 1px;
+      background: #12cc63;
+      border-radius: 0 5px 5px 0;
+    } 
+  `
+    : `
+  &:before {
+    content: '';
+    display: block;
     position: absolute;
-    background: green;
-    width: 100%;
+    bottom: -1px;
     height: 3px;
-    transform: scale(0.2; 1) translate(-50%; 0%);
-  }
+    width: 1px;
+    background: #798EFF;
+    border-radius: 5px 0 0 5px;
+  }`)}
 `

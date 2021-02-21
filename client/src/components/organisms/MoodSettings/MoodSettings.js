@@ -3,8 +3,11 @@ import { observer } from 'mobx-react'
 import {
   bool, func, object,
 } from 'prop-types'
-import { Formik, Form, Field } from 'formik'
+import {
+  Formik, Form, Field, useFormikContext,
+} from 'formik'
 
+import { faHistory } from '@fortawesome/free-solid-svg-icons'
 import {
   Input, Button, FullModal, TextArea,
 } from '../../atoms'
@@ -97,12 +100,36 @@ const MoodSettings = ({
     setMoodLevelRanged(!isMoodLevelRanged)
   }
 
+  const saveDraft = (values) => localStorage.setItem('moodDraft', JSON.stringify(values))
+
   const mockTags = [{}, {}, {}, {}, {}, {}, {}, {}, {}] // TODO: beautify and change loader approach
 
   const getShowingFavoriteFeelings = () => (extendedEmojis === 'feelings' ? feelings : feelings.slice(0, 9))
   const getShowingFavoriteTags = () => (extendedEmojis === 'tags'
     ? favoriteTags
     : (favoriteTags || mockTags).slice(0, 9))
+
+  const DraftSaver = () => {
+    const { values } = useFormikContext()
+
+    useEffect(() => {
+      if (values !== initialMoodDetails) {
+        saveDraft(values)
+      }
+    }, [values])
+
+    return null
+  }
+
+  // TODO: merge next lines
+  const moodDraft = JSON.parse(localStorage.getItem('moodDraft'))
+  const handleDraftIconClick = (values, resetForm) => {
+    if (moodDraft === values) { localStorage.removeItem('moodDraft') }
+
+    if (moodDraft) { resetForm({ values: moodDraft }) }
+  }
+
+  const shouldShowDraft = () => JSON.parse(localStorage.getItem('moodDraft'))
 
   return (
     <MoodSettingsStyle>
@@ -113,7 +140,7 @@ const MoodSettings = ({
         onSubmit={(values, { setSubmitting }) => onSubmit(values, setSubmitting)}
       >
         {({
-          handleSubmit, setFieldValue, setSubmitting, isSubmitting, values,
+          handleSubmit, setFieldValue, isSubmitting, values, resetForm,
         }) => (
           <Form>
             <CategoryHeader
@@ -160,7 +187,11 @@ const MoodSettings = ({
                 />
               )}
             {!extendedEmojis && <DividerStyle />}
-            <CategoryHeader name="Add a note" />
+            <CategoryHeader
+              icon={shouldShowDraft() && faHistory}
+              name="Add a note"
+              handleClick={shouldShowDraft() && (() => handleDraftIconClick(values, resetForm))}
+            />
             <Field
               as={TextArea}
               onFocus={() => extendNoteField()}
@@ -216,6 +247,7 @@ const MoodSettings = ({
                   />
                 </FullModal>
               )}
+            {!isEditMode && <DraftSaver />}
           </Form>
         )}
       </Formik>

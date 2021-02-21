@@ -1,13 +1,23 @@
 import React from 'react'
 
-import { faAngleDown, faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faAngleRight, faHistory } from '@fortawesome/free-solid-svg-icons'
 import { CategoryHeaderStyle } from './CategoryHeaderStyle'
 import { Text, Icon } from '../../atoms'
 
 const CategoryHeader = ({
-  name, handleClick, isExtended, isRanged,
+  name, handleClick, isExtended, isRanged, icon,
 }) => {
   const renderIcon = () => { // TODO: DRY
+    if (icon) {
+      return (
+        <Icon
+          inline
+          icon={icon}
+          size="21px"
+        />
+      )
+    }
+
     if (isExtended !== undefined) {
       return (
         <Icon

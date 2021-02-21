@@ -22,4 +22,10 @@ export const transformDateForInput = (date) => {
   return array.join('-')
 }
 
+export const transformDateTimeToDate = (dateTime) => new Date(dateTime)
+  .toLocaleString('en', { day: 'numeric', month: 'long', year: 'numeric' })
+
+export const transformDateTimeToTime = (dateTime) => new Date(dateTime)
+  .toLocaleString('en-GB', { hour: 'numeric', minute: 'numeric' })
+
 export const maxMoodLevel = 3 // TODO: replace hardcoded 3 with the biggest level from json
