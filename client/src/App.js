@@ -5,7 +5,7 @@ import {
 import { observer } from 'mobx-react'
 import history from './history'
 import {
-  Create, Timeline, Settings, Stats, Login,
+  Create, Timeline, Settings, Stats, Login, LineChart,
 } from './components/pages'
 import { AppStyle, AppBodyStyle, WorkaroundWrapperStyle } from './AppStyle'
 import { MenuBar } from './components/molecules'
@@ -26,6 +26,7 @@ const Routes = withRouter(() => (
           <Route path="/create" component={Create} />
           <Route path="/timeline" component={Timeline} />
           <Route path="/stats" component={Stats} />
+          <Route path="/line-chart" component={LineChart} />
           <Route path="/settings" component={Settings} />
           <Route path="/intro" component={IntroWithLogo} />
           <Redirect from="/" to="/create" />
