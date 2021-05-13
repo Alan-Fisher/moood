@@ -12,7 +12,7 @@ export class Mood extends BaseEntity {
   @Column("int", { array: true, nullable: true })
   feelingIds: number[]
 
-  @Column({ type: 'varchar', length: 2500, nullable: true })
+  @Column({ type: 'varchar', length: 10000, nullable: true })
   note: string
 
   @Column({ default: false })
