@@ -60,14 +60,22 @@ const LineChart = () => { // TODO: refactor this gathered on the knee component
     yaxis: {
       decimalsInFloat: 0,
     },
-    // stroke: {
-    //   show: true,
-    //   curve: 'smooth',
-    //   // lineCap: 'butt',
-    //   colors: ['#F44336'],
-    //   width: 2,
-    //   dashArray: 0,
-    // },
+    stroke: {
+      show: true,
+      curve: 'smooth',
+      // lineCap: 'butt',
+      // colors: ['#F44336'],
+      width: 2,
+      dashArray: 0,
+    },
+    plotOptions: {
+      area: {
+        fillTo: 'end',
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
   }
   const series = [{
     name: 'moods',
@@ -76,7 +84,7 @@ const LineChart = () => { // TODO: refactor this gathered on the knee component
 
   return (
     <LineChartStyle>
-      <Chart options={options} series={series} type="heatmap" width={1200} height={320} />
+      <Chart options={options} series={series} type="area" width={1200} height={320} />
     </LineChartStyle>
   )
 }
