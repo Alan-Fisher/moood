@@ -7,429 +7,89 @@ import russiaRegions from './russiaRegions.json'
 @Injectable()
 export class ABService {
   async getStationsPage(): Promise<any> {
+    // const rp = require('request-promise-native') // eslint-disable-line @typescript-eslint/no-var-requires
+
+    // const results = await rp({
+    //   uri: 'https://almatybike.kz/velostation',
+    //   headers: {
+    //     Connection: 'keep-alive',
+    //     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 Chrome/78.0.3904.108',
+    //     Referer: 'https://almatybike.kz/velostation',
+    //   },
+    //   json: true,
+    // })
+
+    // return results
     this.getCompanies()
   }
 
   async getCompanies(): Promise<any> {
     const rp = require('request-promise-native') // eslint-disable-line @typescript-eslint/no-var-requires
 
-    let companies = []
+    const companies = []
 
     const getPageWithCompanies = async (areaId, letter, page) => {
       let url = 'https://hh.kz/employers_list?'
       const params = { areaId, letter, page }
       Object.entries(params).forEach(([name, value]) => { if (value) { url = url.concat(`&${name}=${value}`) } })
-      // console.log(url)
+      console.log(url)
 
       return fetch(url)
         .then((response) => response.text()
-          .then((html) => {
-            const parser = new DOMParser()
-            return (parser.parseFromString(html, 'text/html'))
-          }))
+          .then((html) => html))
     }
 
 
     const getCompaniesByParams = async (regionId, letter, page) => {
-      const html = await getPageWithCompanies(regionId, letter && encodeURIComponent(letter), page)
+      const html = await getPageWithCompanies(regionId, encodeURIComponent(letter), page)
+      const parser = new DOMParser()
+      const doc = parser.parseFromString(html, 'text/html')
 
-      const nodes = [...html.querySelectorAll('.l-cell.b-companylist > .bloko-text > div')]
+      const nodes = [...doc.querySelectorAll('.l-cell.b-companylist > .bloko-text > div')]
       const parsedCompanies = nodes.map(c => {
         return {
           companyName: c.querySelector('a').textContent,
           companyHhId: parseInt(c.querySelector('a').getAttribute('href').split('/').pop(), 10),
-          companyRegion: { name: getRegionName(regionId), id: parseInt(regionId, 10) },
           vacanciesCount: parseInt(c.querySelector('em').textContent, 10)
         }
       })
 
-      companies = [...companies, ...parsedCompanies]
-      // companies = []
+      companies.push(parsedCompanies)
     }
 
-    const russiaRegions = [
-      {
-        "id": "1620",
-        "text": "Республика Марий Эл"
-      },
-      {
-        "id": "1624",
-        "text": "Республика Татарстан"
-      },
-      {
-        "id": "1646",
-        "text": "Удмуртская Республика"
-      },
-      {
-        "id": "1652",
-        "text": "Чувашская Республика"
-      },
-      {
-        "id": "1192",
-        "text": "Забайкальский край"
-      },
-      {
-        "id": "1124",
-        "text": "Иркутская область"
-      },
-      {
-        "id": "1146",
-        "text": "Красноярский край"
-      },
-      {
-        "id": "1118",
-        "text": "Республика Бурятия"
-      },
-      {
-        "id": "1174",
-        "text": "Республика Саха (Якутия)"
-      },
-      {
-        "id": "1169",
-        "text": "Республика Тыва"
-      },
-      {
-        "id": "1187",
-        "text": "Республика Хакасия"
-      },
-      {
-        "id": "1661",
-        "text": "Кировская область"
-      },
-      {
-        "id": "1679",
-        "text": "Нижегородская область"
-      },
-      {
-        "id": "1704",
-        "text": "Рязанская область"
-      },
-      {
-        "id": "1217",
-        "text": "Алтайский край"
-      },
-      {
-        "id": "1229",
-        "text": "Кемеровская область"
-      },
-      {
-        "id": "1202",
-        "text": "Новосибирская область"
-      },
-      {
-        "id": "1249",
-        "text": "Омская область"
-      },
-      {
-        "id": "1216",
-        "text": "Республика Алтай"
-      },
-      {
-        "id": "1255",
-        "text": "Томская область"
-      },
-      {
-        "id": "1",
-        "text": "Москва"
-      },
-      {
-        "id": "2019",
-        "text": "Московская область"
-      },
-      {
-        "id": "1932",
-        "text": "Амурская область"
-      },
-      {
-        "id": "1941",
-        "text": "Еврейская АО"
-      },
-      {
-        "id": "1943",
-        "text": "Камчатский край"
-      },
-      {
-        "id": "1946",
-        "text": "Магаданская область"
-      },
-      {
-        "id": "1948",
-        "text": "Приморский край"
-      },
-      {
-        "id": "1960",
-        "text": "Сахалинская область"
-      },
-      {
-        "id": "1975",
-        "text": "Хабаровский край"
-      },
-      {
-        "id": "1982",
-        "text": "Чукотский АО"
-      },
-      {
-        "id": "1008",
-        "text": "Архангельская область"
-      },
-      {
-        "id": "1020",
-        "text": "Калининградская область"
-      },
-      {
-        "id": "145",
-        "text": "Ленинградская область"
-      },
-      {
-        "id": "1061",
-        "text": "Мурманская область"
-      },
-      {
-        "id": "1985",
-        "text": "Ненецкий АО"
-      },
-      {
-        "id": "1051",
-        "text": "Новгородская область"
-      },
-      {
-        "id": "1090",
-        "text": "Псковская область"
-      },
-      {
-        "id": "1077",
-        "text": "Республика Карелия"
-      },
-      {
-        "id": "1041",
-        "text": "Республика Коми"
-      },
-      {
-        "id": "2",
-        "text": "Санкт-Петербург"
-      },
-      {
-        "id": "1103",
-        "text": "Смоленская область"
-      },
-      {
-        "id": "1716",
-        "text": "Владимирская область"
-      },
-      {
-        "id": "1739",
-        "text": "Вологодская область"
-      },
-      {
-        "id": "1754",
-        "text": "Ивановская область"
-      },
-      {
-        "id": "1771",
-        "text": "Костромская область"
-      },
-      {
-        "id": "1783",
-        "text": "Тверская область"
-      },
-      {
-        "id": "1806",
-        "text": "Ярославская область"
-      },
-      {
-        "id": "1563",
-        "text": "Оренбургская область"
-      },
-      {
-        "id": "1575",
-        "text": "Пензенская область"
-      },
-      {
-        "id": "1556",
-        "text": "Республика Мордовия"
-      },
-      {
-        "id": "1586",
-        "text": "Самарская область"
-      },
-      {
-        "id": "1596",
-        "text": "Саратовская область"
-      },
-      {
-        "id": "1614",
-        "text": "Ульяновская область"
-      },
-      {
-        "id": "1308",
-        "text": "Курганская область"
-      },
-      {
-        "id": "1317",
-        "text": "Пермский край"
-      },
-      {
-        "id": "1347",
-        "text": "Республика Башкортостан"
-      },
-      {
-        "id": "1261",
-        "text": "Свердловская область"
-      },
-      {
-        "id": "1342",
-        "text": "Тюменская область"
-      },
-      {
-        "id": "1368",
-        "text": "Ханты-Мансийский АО - Югра"
-      },
-      {
-        "id": "1384",
-        "text": "Челябинская область"
-      },
-      {
-        "id": "1414",
-        "text": "Ямало-Ненецкий АО"
-      },
-      {
-        "id": "1463",
-        "text": "Кабардино-Балкарская республика"
-      },
-      {
-        "id": "1471",
-        "text": "Карачаево-Черкесская Республика"
-      },
-      {
-        "id": "1438",
-        "text": "Краснодарский край"
-      },
-      {
-        "id": "1422",
-        "text": "Республика Адыгея"
-      },
-      {
-        "id": "1424",
-        "text": "Республика Дагестан"
-      },
-      {
-        "id": "1434",
-        "text": "Республика Ингушетия"
-      },
-      {
-        "id": "1475",
-        "text": "Республика Северная Осетия-Алания"
-      },
-      {
-        "id": "1481",
-        "text": "Ставропольский край"
-      },
-      {
-        "id": "1500",
-        "text": "Чеченская республика"
-      },
-      {
-        "id": "1817",
-        "text": "Белгородская область"
-      },
-      {
-        "id": "1828",
-        "text": "Брянская область"
-      },
-      {
-        "id": "1844",
-        "text": "Воронежская область"
-      },
-      {
-        "id": "1859",
-        "text": "Калужская область"
-      },
-      {
-        "id": "1880",
-        "text": "Курская область"
-      },
-      {
-        "id": "1890",
-        "text": "Липецкая область"
-      },
-      {
-        "id": "1898",
-        "text": "Орловская область"
-      },
-      {
-        "id": "1905",
-        "text": "Тамбовская область"
-      },
-      {
-        "id": "1913",
-        "text": "Тульская область"
-      },
-      {
-        "id": "1505",
-        "text": "Астраханская область"
-      },
-      {
-        "id": "2114",
-        "text": "Республика Крым"
-      },
-      {
-        "id": "1511",
-        "text": "Волгоградская область"
-      },
-      {
-        "id": "1553",
-        "text": "Республика Калмыкия"
-      },
-      {
-        "id": "1530",
-        "text": "Ростовская область"
-      }
-    ]
-    
-    const getRegionName = (regionId) => russiaRegions.find(({ id }) => id == regionId).text
+    const russiaRegionsIds = ["1620", "1624", "1646", "1652", "1192", "1124", "1146", "1118", "1174", "1169", "1187", "1661", "1679", "1704", "1217", "1229", "1202", "1249", "1216", "1255", "1", "2019", "1932", "1941", "1943", "1946", "1948", "1960", "1975", "1982", "1008", "1020", "145", "1061", "1985", "1051", "1090", "1077", "1041", "2", "1103", "1716", "1739", "1754", "1771", "1783", "1806", "1563", "1575", "1556", "1586", "1596", "1614", "1308", "1317", "1347", "1261", "1342", "1368", "1384", "1414", "1463", "1471", "1438", "1422", "1424", "1434", "1475", "1481", "1500", "1817", "1828", "1844", "1859", "1880", "1890", "1898", "1905", "1913", "1505", "2114", "1511", "1553", "1530"]
 
     const getCompaniesByRegionAndLetters = async (regionId) => {
-      console.log(`\nВ регионе ${getRegionName(regionId)} больше 5000 вакансий, придется пройтись по алфавиту:`)
+      
       const letters = ["А", "Б", "В", "Г", "Д", "Е", "Ж", "З", "И", "Й", "К", "Л", "М", "Н", "О", "П", "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Э", "Ю", "Я", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "%23"]
 
       for (const letter of letters) {
         for (let page = 0; page < 1; page++) {
-          if (page % 10 === 0 && page > 0) { console.log(`Буква: ${letter}, Страниц обработано: ${page}`) }
+          if (page % 10 === 0) { console.log(`Буква: ${letter}, Страниц: ${page}0`) }
           getCompaniesByParams(regionId, letter, page)
         }
       }
     }
 
-    const getCompaniesByRegion = async (regionId) => {
-      console.log(`\nСобираю компании в регионе ${getRegionName(regionId)}:`)
-
-      for (let page = 0; page < 1; page++) {
-        if (page % 10 === 0 && page > 0) { console.log(`Страниц обработано: ${page}`) }
-        getCompaniesByParams(regionId, undefined, page)
-      }
-    }
-
-
-    const russiaRegionsIds = russiaRegions.map(r => r.id).slice(0,1)
-    console.log(`Собираю все доступные компании по России...`)
+    // const russiaRegionsIds = russiaRegions.map(r => r.id)
+    console.log(`Собираю все доступные компании по России`)
 
     for (const regionId of russiaRegionsIds) {
       const html = await getPageWithCompanies(regionId, undefined, undefined)
+      const parser = new DOMParser()
+      const doc = parser.parseFromString(html, 'text/html')
 
-      const companiesCount = parseInt(html.querySelector('.b-alfabeta-totals.nopaddings > strong').textContent.replace(/\s+/g, ''), 10)
-
+      const companiesCount = parseInt(doc.querySelector('.b-alfabeta-totals.nopaddings > strong').textContent.replace(/\s+/g, ''), 10)
+      console.log(companiesCount)
       if (companiesCount > 5000) {
         getCompaniesByRegionAndLetters(regionId)
       } else {
-        getCompaniesByRegion(regionId)
+
       }
     }
 
-    console.log('\nДело сделано!')
-    console.log(companies)
     const fs = require('fs')
-
-    fs.writeFileSync('/Users/alan/code/projects/leadgenerator/all-the-companies-2021-11-06.json', JSON.stringify(companies))
+    fs.writeFileSync('/Users/alan/code/projects/leadgenerator/companies-by-letters-2021-11-06.json', JSON.stringify(companies))
   }
 
   async getContacts(): Promise<string> {
