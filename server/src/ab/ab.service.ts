@@ -7,19 +7,6 @@ import russiaRegions from './russiaRegions.json'
 @Injectable()
 export class ABService {
   async getStationsPage(): Promise<any> {
-    // const rp = require('request-promise-native') // eslint-disable-line @typescript-eslint/no-var-requires
-
-    // const results = await rp({
-    //   uri: 'https://almatybike.kz/velostation',
-    //   headers: {
-    //     Connection: 'keep-alive',
-    //     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 Chrome/78.0.3904.108',
-    //     Referer: 'https://almatybike.kz/velostation',
-    //   },
-    //   json: true,
-    // })
-
-    // return results
     this.getCompanies()
   }
 
@@ -32,7 +19,7 @@ export class ABService {
       let url = 'https://hh.kz/employers_list?'
       const params = { areaId, letter, page }
       Object.entries(params).forEach(([name, value]) => { if (value) { url = url.concat(`&${name}=${value}`) } })
-      console.log(url)
+      // console.log(url)
 
       return fetch(url)
         .then((response) => response.text()
@@ -44,7 +31,7 @@ export class ABService {
 
 
     const getCompaniesByParams = async (regionId, letter, page) => {
-      const html = await getPageWithCompanies(regionId, encodeURIComponent(letter), page)
+      const html = await getPageWithCompanies(regionId, letter && encodeURIComponent(letter), page)
 
       const nodes = [...html.querySelectorAll('.l-cell.b-companylist > .bloko-text > div')]
       const parsedCompanies = nodes.map(c => {
@@ -55,10 +42,9 @@ export class ABService {
         }
       })
 
-      companies.push(parsedCompanies)
+      companies.push(...parsedCompanies)
     }
 
-    // const russiaRegionsIds = ["1620", "1624", "1646", "1652", "1192", "1124", "1146", "1118", "1174", "1169", "1187", "1661", "1679", "1704", "1217", "1229", "1202", "1249", "1216", "1255", "1", "2019", "1932", "1941", "1943", "1946", "1948", "1960", "1975", "1982", "1008", "1020", "145", "1061", "1985", "1051", "1090", "1077", "1041", "2", "1103", "1716", "1739", "1754", "1771", "1783", "1806", "1563", "1575", "1556", "1586", "1596", "1614", "1308", "1317", "1347", "1261", "1342", "1368", "1384", "1414", "1463", "1471", "1438", "1422", "1424", "1434", "1475", "1481", "1500", "1817", "1828", "1844", "1859", "1880", "1890", "1898", "1905", "1913", "1505", "2114", "1511", "1553", "1530"]
     const russiaRegions = [
       {
         "id": "1620",
@@ -400,21 +386,21 @@ export class ABService {
     const getRegionName = (regionId) => russiaRegions.find(({ id }) => id == regionId).text
 
     const getCompaniesByRegionAndLetters = async (regionId) => {
-      console.log(`Придется пройтись по алфавиту, тамуша больше 5000 вакансий в регионе ${getRegionName(regionId)}`)
+      console.log(`\nПридется пройтись по алфавиту, тамуша больше 5000 вакансий в регионе ${getRegionName(regionId)}`)
       const letters = ["А", "Б", "В", "Г", "Д", "Е", "Ж", "З", "И", "Й", "К", "Л", "М", "Н", "О", "П", "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Э", "Ю", "Я", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "%23"]
 
       for (const letter of letters) {
-        for (let page = 0; page < 50; page++) {
-          if (page % 10 === 0) { console.log(`Буква: ${letter}, Страниц обработано: ${page}0`) }
+        for (let page = 0; page < 1; page++) {
+          if (page % 10 === 0 && page > 0) { console.log(`Буква: ${letter}, Страниц обработано: ${page}0`) }
           getCompaniesByParams(regionId, letter, page)
         }
       }
     }
 
     const getCompaniesByRegion = async (regionId) => {
-      console.log(`Собираю компании в регионе ${getRegionName(regionId)}`)
+      console.log(`\nСобираю компании в регионе ${getRegionName(regionId)}`)
 
-      for (let page = 0; page < 50; page++) {
+      for (let page = 0; page < 1; page++) {
         if (page % 10 === 0) { console.log(`Страниц обработано: ${page}0`) }
         getCompaniesByParams(regionId, undefined, page)
       }
@@ -424,11 +410,11 @@ export class ABService {
     const russiaRegionsIds = russiaRegions.map(r => r.id)
     console.log(`Собираю все доступные компании по России`)
 
-    for (const regionId of russiaRegionsIds) {
+    for (const regionId of russiaRegionsIds.slice(0, 5)) {
       const html = await getPageWithCompanies(regionId, undefined, undefined)
 
       const companiesCount = parseInt(html.querySelector('.b-alfabeta-totals.nopaddings > strong').textContent.replace(/\s+/g, ''), 10)
-      console.log(companiesCount)
+
       if (companiesCount > 5000) {
         getCompaniesByRegionAndLetters(regionId)
       } else {
@@ -436,8 +422,10 @@ export class ABService {
       }
     }
 
+    console.log('\nДело сделано!')
+
     const fs = require('fs')
-    fs.writeFileSync('/Users/alan/code/projects/leadgenerator/companies-by-letters-2021-11-06.json', JSON.stringify(companies))
+    fs.writeFileSync('/Users/alan/code/projects/leadgenerator/all-the-companies-2021-11-06.json', JSON.stringify(companies))
   }
 
   async getContacts(): Promise<string> {
