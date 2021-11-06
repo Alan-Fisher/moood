@@ -13,7 +13,7 @@ export class ABService {
   async getCompanies(): Promise<any> {
     const rp = require('request-promise-native') // eslint-disable-line @typescript-eslint/no-var-requires
 
-    const companies = []
+    let companies = []
 
     const getPageWithCompanies = async (areaId, letter, page) => {
       let url = 'https://hh.kz/employers_list?'
@@ -25,7 +25,7 @@ export class ABService {
         .then((response) => response.text()
           .then((html) => {
             const parser = new DOMParser()
-            return(parser.parseFromString(html, 'text/html'))
+            return (parser.parseFromString(html, 'text/html'))
           }))
     }
 
@@ -38,11 +38,13 @@ export class ABService {
         return {
           companyName: c.querySelector('a').textContent,
           companyHhId: parseInt(c.querySelector('a').getAttribute('href').split('/').pop(), 10),
+          companyRegion: { name: getRegionName(regionId), id: parseInt(regionId, 10) },
           vacanciesCount: parseInt(c.querySelector('em').textContent, 10)
         }
       })
 
-      companies.push(...parsedCompanies)
+      companies = [...companies, ...parsedCompanies]
+      // companies = []
     }
 
     const russiaRegions = [
@@ -383,34 +385,35 @@ export class ABService {
         "text": "Ростовская область"
       }
     ]
+    
     const getRegionName = (regionId) => russiaRegions.find(({ id }) => id == regionId).text
 
     const getCompaniesByRegionAndLetters = async (regionId) => {
-      console.log(`\nПридется пройтись по алфавиту, тамуша больше 5000 вакансий в регионе ${getRegionName(regionId)}`)
+      console.log(`\nВ регионе ${getRegionName(regionId)} больше 5000 вакансий, придется пройтись по алфавиту:`)
       const letters = ["А", "Б", "В", "Г", "Д", "Е", "Ж", "З", "И", "Й", "К", "Л", "М", "Н", "О", "П", "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Э", "Ю", "Я", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "%23"]
 
       for (const letter of letters) {
         for (let page = 0; page < 1; page++) {
-          if (page % 10 === 0 && page > 0) { console.log(`Буква: ${letter}, Страниц обработано: ${page}0`) }
+          if (page % 10 === 0 && page > 0) { console.log(`Буква: ${letter}, Страниц обработано: ${page}`) }
           getCompaniesByParams(regionId, letter, page)
         }
       }
     }
 
     const getCompaniesByRegion = async (regionId) => {
-      console.log(`\nСобираю компании в регионе ${getRegionName(regionId)}`)
+      console.log(`\nСобираю компании в регионе ${getRegionName(regionId)}:`)
 
       for (let page = 0; page < 1; page++) {
-        if (page % 10 === 0) { console.log(`Страниц обработано: ${page}0`) }
+        if (page % 10 === 0 && page > 0) { console.log(`Страниц обработано: ${page}`) }
         getCompaniesByParams(regionId, undefined, page)
       }
     }
 
 
-    const russiaRegionsIds = russiaRegions.map(r => r.id)
-    console.log(`Собираю все доступные компании по России`)
+    const russiaRegionsIds = russiaRegions.map(r => r.id).slice(0,1)
+    console.log(`Собираю все доступные компании по России...`)
 
-    for (const regionId of russiaRegionsIds.slice(0, 5)) {
+    for (const regionId of russiaRegionsIds) {
       const html = await getPageWithCompanies(regionId, undefined, undefined)
 
       const companiesCount = parseInt(html.querySelector('.b-alfabeta-totals.nopaddings > strong').textContent.replace(/\s+/g, ''), 10)
@@ -423,8 +426,9 @@ export class ABService {
     }
 
     console.log('\nДело сделано!')
-
+    console.log(companies)
     const fs = require('fs')
+
     fs.writeFileSync('/Users/alan/code/projects/leadgenerator/all-the-companies-2021-11-06.json', JSON.stringify(companies))
   }
 
