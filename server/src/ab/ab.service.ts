@@ -12,7 +12,7 @@ export class ABService {
 
   async getCompanies(): Promise<any> {
 
-    const russiaRegions1 = [
+    const russiaRegions = [
       {
         "id": "1620",
         "text": "Республика Марий Эл"
@@ -350,11 +350,15 @@ export class ABService {
         "text": "Ростовская область"
       }
     ]
-    const russiaRegions = [
+    const russiaRegions1 = [
       {
         "id": "1620",
         "text": "Республика Марий Эл"
-      }
+      },
+      {
+        "id": "1624",
+        "text": "Республика Татарстан"
+      },
     ]
     const russiaRegionsIds = russiaRegions.map(r => r.id).slice(0, 1)
     const getRegionName = (regionId) => russiaRegions.find(({ id }) => id == regionId).text
@@ -389,8 +393,6 @@ export class ABService {
       })
 
       return await parsedCompanies
-
-      // console.log(companies)
     }
 
     const iterateThroughPages = async (regionId, letter) => {
@@ -398,17 +400,24 @@ export class ABService {
 
       // return await getCompaniesByParams(regionId, letter, 1)
       // return await [1, 2].map(async page => {
-      const companies = []
-      for (let page = 0; page < 1; page++) {
-        // if (page % 10 === 0 && page > 0) { console.log(`Страниц обработано: ${page}`) }
-        companies.push(await getCompaniesByParams(regionId, letter, page))
+      const companiesOnPages = []
+      for (let page = 0; page < 50; page++) {
+        if (page % 10 === 0 && page > 0) {
+          console.log(`Страниц проверено: ${page}`)
+        }
+        const companiesOnPage = await getCompaniesByParams(regionId, letter, page)
+        if (companiesOnPage.length === 0) {
+          console.log(`Страниц проверено: ${page}`)
+          break
+        }
+        companiesOnPages.push(...companiesOnPage)
       }
-      return await companies
+      return await companiesOnPages
     }
 
     const getCompaniesByRegionAndLetters = async (regionId) => {
-      // const letters = ["А", "Б", "В", "Г", "Д", "Е", "Ж", "З", "И", "Й", "К", "Л", "М", "Н", "О", "П", "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Э", "Ю", "Я", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "%23"]
-      const letters = ["А", "Б"]
+      const letters = ["А", "Б", "В", "Г", "Д", "Е", "Ж", "З", "И", "Й", "К", "Л", "М", "Н", "О", "П", "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Э", "Ю", "Я", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "%23"]
+      // const letters = ["А", "Б"]
       console.log(`\nВ регионе ${getRegionName(regionId)} больше 5000 вакансий, придется пройтись по алфавиту:`)
 
       // for (const letter of letters) {
@@ -431,16 +440,16 @@ export class ABService {
           const companiesCount = parseInt(html.querySelector('.b-alfabeta-totals.nopaddings > strong').textContent.replace(/\s+/g, ''), 10)
 
           if (companiesCount > 5000) {
-            companies.push(await getCompaniesByRegionAndLetters(regionId))
+            companies.push(...await getCompaniesByRegionAndLetters(regionId))
           } else {
-            companies.push(await getCompaniesByRegion(regionId))
+            companies.push(...await getCompaniesByRegion(regionId))
           }
         })
     }
 
     const fs = require('fs')
-    fs.writeFileSync('/Users/alan/code/projects/leadgenerator/_2021-1-07.json', JSON.stringify(companies))
     console.log('\nДело сделано!')
+    fs.writeFileSync('/Users/alan/code/projects/leadgenerator/all_companies_2021-1-07.json', JSON.stringify(companies))
   }
 
   // async getContacts(): Promise<string> {
