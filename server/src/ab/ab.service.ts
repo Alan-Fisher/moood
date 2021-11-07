@@ -350,17 +350,9 @@ export class ABService {
         "text": "Ростовская область"
       }
     ]
-    const russiaRegions1 = [
-      {
-        "id": "1620",
-        "text": "Республика Марий Эл"
-      },
-      {
-        "id": "1624",
-        "text": "Республика Татарстан"
-      },
-    ]
-    const russiaRegionsIds = russiaRegions.map(r => r.id).slice(0, 1)
+   
+    const russiaRegionsIds = russiaRegions.map(r => r.id)
+      // .slice(0, 1)
     const getRegionName = (regionId) => russiaRegions.find(({ id }) => id == regionId).text
 
     const getPageWithCompanies = async (areaId, letter, page) => {
@@ -407,7 +399,7 @@ export class ABService {
         }
         const companiesOnPage = await getCompaniesByParams(regionId, letter, page)
         if (companiesOnPage.length === 0) {
-          console.log(`Страниц проверено: ${page}`)
+          console.log(`Всего страниц: ${page}`)
           break
         }
         companiesOnPages.push(...companiesOnPage)
@@ -418,7 +410,7 @@ export class ABService {
     const getCompaniesByRegionAndLetters = async (regionId) => {
       const letters = ["А", "Б", "В", "Г", "Д", "Е", "Ж", "З", "И", "Й", "К", "Л", "М", "Н", "О", "П", "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Э", "Ю", "Я", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "%23"]
       // const letters = ["А", "Б"]
-      console.log(`\nВ регионе ${getRegionName(regionId)} больше 5000 вакансий, придется пройтись по алфавиту:`)
+      console.log(`\nВ регионе ${getRegionName(regionId)} больше 5000 вакансий, придется пройтись по алфавиту...`)
 
       // for (const letter of letters) {
       return await letters.map(letter => {
@@ -427,13 +419,12 @@ export class ABService {
     }
 
     const getCompaniesByRegion = async (regionId) => {
-      console.log(`\nСобираю компании в регионе ${getRegionName(regionId)}:`)
+      console.log(`\nСобираю компании в регионе ${getRegionName(regionId)}...`)
       return await iterateThroughPages(regionId, undefined)
     }
 
-
-
-    console.log(`Собираю все доступные компании по России...`)
+    console.log(`Сейчас я соберу все компании по региону Россия.`)
+    console.time('Общее время')
     for (const regionId of russiaRegionsIds) {
       await getPageWithCompanies(regionId, undefined, undefined)
         .then(async html => {
@@ -449,6 +440,7 @@ export class ABService {
 
     const fs = require('fs')
     console.log('\nДело сделано!')
+    console.timeEnd('Общее время')
     fs.writeFileSync('/Users/alan/code/projects/leadgenerator/all_companies_2021-1-07.json', JSON.stringify(companies))
   }
 
