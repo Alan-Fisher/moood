@@ -7,7 +7,7 @@ global.DOMParser = new JSDOM().window.DOMParser
 @Injectable()
 export class ABService {
   async getStationsPage(): Promise<any> {
-    this.getCompanies()
+    this.getContacts()
   }
 
   async getCompanies(): Promise<any> {
@@ -411,7 +411,7 @@ export class ABService {
     }
 
     const getCompaniesByRegionAndLetters = async (regionId) => {
-       // TODO: move to config
+      // TODO: move to config
       const letters = ["А", "Б", "В", "Г", "Д", "Е", "Ж", "З", "И", "Й", "К", "Л", "М", "Н", "О", "П", "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Э", "Ю", "Я", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "%23"]
       // const letters = ["А", "Б"]
       console.log(`\nВ регионе ${getRegionName(regionId)} больше 5000 компаний, придется пройтись по алфавиту...`)
@@ -447,6 +447,652 @@ export class ABService {
     console.log('\nДело сделано!')
     console.timeEnd('Общее время')
     fs.writeFileSync('/Users/alan/code/projects/leadgenerator/2021-11-07-all-except-moscow-spb.json', JSON.stringify(companies))
+  }
+
+  async getContacts(): Promise<any> {
+    const firstCompanies = [
+      {
+          "companyName": "А101",
+          "companyHhId": 2661,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 109
+      },
+      {
+          "companyName": "ААРОН АВТО",
+          "companyHhId": 603085,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 26
+      },
+      {
+          "companyName": "АБК",
+          "companyHhId": 1320790,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 39
+      },
+      {
+          "companyName": "АБ-МАРКЕТ",
+          "companyHhId": 31480,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 21
+      },
+      {
+          "companyName": "АБСОЛЮТ БАНК",
+          "companyHhId": 2737,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 103
+      },
+      {
+          "companyName": "Абсолют Страхование",
+          "companyHhId": 4431705,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 45
+      },
+      {
+          "companyName": "АБС Электро",
+          "companyHhId": 52578,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 50
+      },
+      {
+          "companyName": "Авангард-Агро",
+          "companyHhId": 1859826,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 168
+      },
+      {
+          "companyName": "Авангард, АКБ",
+          "companyHhId": 5755,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 199
+      },
+      {
+          "companyName": "Авангард. Профессиональная экипировка",
+          "companyHhId": 29858,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 36
+      },
+      {
+          "companyName": "«АВВА РУС»",
+          "companyHhId": 1053,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 51
+      },
+      {
+          "companyName": "Август, Фирма",
+          "companyHhId": 784,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 90
+      },
+      {
+          "companyName": "Авексима",
+          "companyHhId": 1179289,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 43
+      },
+      {
+          "companyName": "Авиакомпания Победа",
+          "companyHhId": 1520649,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 39
+      },
+      {
+          "companyName": "Авл Премьер",
+          "companyHhId": 5172095,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 23
+      },
+      {
+          "companyName": "Авоська, Cеть универсамов",
+          "companyHhId": 23636,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 22
+      },
+      {
+          "companyName": "АвтоГЕРМЕС, Группа компаний",
+          "companyHhId": 156344,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 70
+      },
+      {
+          "companyName": "Автодин",
+          "companyHhId": 1226563,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 22
+      },
+      {
+          "companyName": "Авто-Евро",
+          "companyHhId": 215194,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 142
+      },
+      {
+          "companyName": "АВТОМИР, ГК",
+          "companyHhId": 569,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 269
+      },
+      {
+          "companyName": "Автомобильный батальон 2го специального полка Полиции ГУ МВД России по г. Москве",
+          "companyHhId": 3789495,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 46
+      },
+      {
+          "companyName": "Авторитэйл М",
+          "companyHhId": 4779813,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 78
+      },
+      {
+          "companyName": "АвтоСпецЦентр",
+          "companyHhId": 13520,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 98
+      },
+      {
+          "companyName": "Автостэлс",
+          "companyHhId": 88618,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 34
+      },
+      {
+          "companyName": "Автофлот-Столица",
+          "companyHhId": 3732737,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 26
+      },
+      {
+          "companyName": "АГАМА, Группа компаний",
+          "companyHhId": 35143,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 37
+      },
+      {
+          "companyName": "Агентство 21 век, КЦ",
+          "companyHhId": 659638,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 21
+      },
+      {
+          "companyName": "Агентство Инфраструктурного и Промышленного Развития Ямало-Ненецкого Автономного Округа",
+          "companyHhId": 2367496,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 43
+      },
+      {
+          "companyName": "Агентство кадрового аутсорсинга ALL HR",
+          "companyHhId": 1107291,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 29
+      },
+      {
+          "companyName": "Агентство КИТ Консалт",
+          "companyHhId": 637743,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 438
+      },
+      {
+          "companyName": "Агентство мерчандайзинга АСМ",
+          "companyHhId": 245063,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 63
+      },
+      {
+          "companyName": "Агентство Ми-Ми",
+          "companyHhId": 1888985,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 26
+      },
+      {
+          "companyName": "Агентство по подбору персонала Global Search",
+          "companyHhId": 5414326,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 22
+      },
+      {
+          "companyName": "Агора, Группа компаний",
+          "companyHhId": 6195,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 47
+      },
+      {
+          "companyName": "Агрокомбинат Московский",
+          "companyHhId": 127942,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 21
+      },
+      {
+          "companyName": "Агрохолдинг Белая Дача",
+          "companyHhId": 105688,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 53
+      },
+      {
+          "companyName": "АДАМАС",
+          "companyHhId": 72995,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 46
+      },
+      {
+          "companyName": "АДВ",
+          "companyHhId": 1994,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 63
+      },
+      {
+          "companyName": "Аддвайз",
+          "companyHhId": 919758,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 65
+      },
+      {
+          "companyName": "Азбука вкуса",
+          "companyHhId": 2120,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 288
+      },
+      {
+          "companyName": "Азбука Качества-дом брендов",
+          "companyHhId": 683367,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 36
+      },
+      {
+          "companyName": "Азимут ФМ",
+          "companyHhId": 408802,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 23
+      },
+      {
+          "companyName": "АЙКРАФТ",
+          "companyHhId": 726371,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 186
+      },
+      {
+          "companyName": "АЙНЬЮС, OOO",
+          "companyHhId": 31331,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 27
+      },
+      {
+          "companyName": "АЙСБЕРРИ",
+          "companyHhId": 2751,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 102
+      },
+      {
+          "companyName": "Ай-Теко (I-Teco)",
+          "companyHhId": 115,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 122
+      },
+      {
+          "companyName": "Айтикью Груп",
+          "companyHhId": 4722815,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 39
+      },
+      {
+          "companyName": "АЙФЭЛЛ",
+          "companyHhId": 3646686,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 22
+      },
+      {
+          "companyName": "Академия Максимус",
+          "companyHhId": 197566,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 95
+      },
+      {
+          "companyName": "Академия социального управления",
+          "companyHhId": 79618,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 23
+      },
+      {
+          "companyName": "АК АЛРОСА",
+          "companyHhId": 92288,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 369
+      },
+      {
+          "companyName": "АККУЮ НУКЛЕАР",
+          "companyHhId": 885567,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 22
+      },
+      {
+          "companyName": "«АКП-Техно»",
+          "companyHhId": 541729,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 37
+      },
+      {
+          "companyName": "АКРИХИН",
+          "companyHhId": 2371,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 51
+      },
+      {
+          "companyName": "Акрон",
+          "companyHhId": 44,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 55
+      },
+      {
+          "companyName": "«Аксиома-Софт»",
+          "companyHhId": 1512281,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 106
+      },
+      {
+          "companyName": "АКСИТЕХ",
+          "companyHhId": 538164,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 27
+      },
+      {
+          "companyName": "Аксофт",
+          "companyHhId": 1008388,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 26
+      },
+      {
+          "companyName": "Актив",
+          "companyHhId": 2147,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 20
+      },
+      {
+          "companyName": "Акушерство.ru, Компания",
+          "companyHhId": 890621,
+          "companyRegion": {
+              "name": "Москва",
+              "id": 1
+          },
+          "vacanciesCount": 27
+      }
+  ]
+
+    const getPageWithVacancies = async (companyHhId, page) => {
+      const url = `https://almaty.hh.kz/search/vacancy?from=employerPage&employer_id=${companyHhId}&page=${page}`
+
+      return await fetch(url)
+        .then((response) => response.text()
+          .then((html) => {
+            const parser = new DOMParser()
+            return (parser.parseFromString(html, 'text/html'))
+          }))
+    }
+
+    const getVacanciesByParams = async (companyHhId, page) => {
+      const html = await getPageWithVacancies(companyHhId, page)
+      let parsedVacancies
+
+      try {
+        parsedVacancies = JSON.parse(html.querySelector('template#HH-Lux-InitialState').innerHTML).vacancySearchResult.vacancies
+      } catch (e) {
+        console.log(e)
+        throw new Error('broken_object')
+      }
+      return await parsedVacancies
+    }
+
+    const iterateThroughPages = async (companyHhId) => {
+      const vacanciesOnPages = []
+      for (let page = 0; page < 40; page++) { // TODO: move to config
+        if (page % 5 === 0 && page > 0) {
+          console.info(`Страниц проверено: ${page}`)
+        }
+        let vacanciesOnPage
+        try {
+          vacanciesOnPage = await getVacanciesByParams(companyHhId, page) // TODO: вынести и тут получать только вакансии на странице, а потом манипулировать
+          
+          if (vacanciesOnPage.length === 0) {
+            console.info(`Всего страниц: ${page}`)
+            break
+          }
+        } catch (e) {
+          console.error('Не удалось вытащить рекрутеров')
+        }
+
+        vacanciesOnPages.push(...vacanciesOnPage)
+      }
+
+      const getUniquePhones = (vacancies) => { // TODO: merge with next function
+        const vacanciesWithContacts = vacancies?.filter(({ contactInfo }) => contactInfo)
+  
+        return vacanciesWithContacts?.map(({ vacancyId, name, contactInfo }) => {
+          const { email, fio, phones } = contactInfo || {}
+          const transformedPhones = phones?.phones?.map(({ city, country, number }) => `${country}${city}${number}`)
+          return {
+            recruiter: {
+              email,
+              fio,
+              phones: transformedPhones
+            },
+            vacancy: {
+              id: vacancyId,
+              name,
+            }
+          }
+        })
+      }
+
+      const recruitersByUniquePhones = []
+      const addedNumbers = []
+
+      getUniquePhones(vacanciesOnPages)?.forEach(({ vacancy, recruiter }) => {
+        const { phones, email, fio } = recruiter
+        phones?.forEach(p => {
+          if (!addedNumbers.includes(p)) {
+            recruitersByUniquePhones.push({
+              phone: p,
+              email,
+              fio,
+              vacancy
+            })
+            addedNumbers.push(p)
+          }
+        })
+      })
+
+      return await recruitersByUniquePhones
+    }
+
+    const companiesWithRecruiters = []
+
+    // const test = [{ companyHhId: 172 }]
+    for (const company of firstCompanies) {
+      const { companyHhId, companyName } = company
+      console.info(`\nСобираю рекрутеров с компании ${companyName}...`)
+      const recruiters = await iterateThroughPages(companyHhId)
+      companiesWithRecruiters.push({ ...company, recruiters: recruiters })
+    }
+
+    // console.log(JSON.stringify(companiesWithRecruiters))
+    const fs = require('fs')
+    fs.writeFileSync('/Users/alan/code/projects/leadgenerator/2021-11-12/!2021-11-12-contacts-moscow-spb.json', JSON.stringify(companiesWithRecruiters))
+    console.log('\nДело сделано!')
   }
 
   // async getContacts(): Promise<string> {

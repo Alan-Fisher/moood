@@ -1,0 +1,3476 @@
+[
+  {
+    "companyName": "А101",
+    "companyHhId": 2661,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 109
+  },
+  {
+    "companyName": "А101-Комфорт",
+    "companyHhId": 3640042,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "А17",
+    "companyHhId": 4768936,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "А1 АВТО",
+    "companyHhId": 2777288,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 15
+  },
+  {
+    "companyName": "А410",
+    "companyHhId": 2035304,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "ААРОН АВТО",
+    "companyHhId": 603085,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 26
+  },
+  {
+    "companyName": "Абада",
+    "companyHhId": 566994,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "АБК",
+    "companyHhId": 1320790,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 39
+  },
+  {
+    "companyName": "АБ-МАРКЕТ",
+    "companyHhId": 31480,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 21
+  },
+  {
+    "companyName": "АБН",
+    "companyHhId": 30858,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 18
+  },
+  {
+    "companyName": "АБСОЛЮТ БАНК",
+    "companyHhId": 2737,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 103
+  },
+  {
+    "companyName": "Абсолюткарта",
+    "companyHhId": 1639092,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 15
+  },
+  {
+    "companyName": "Абсолют Страхование",
+    "companyHhId": 4431705,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 45
+  },
+  {
+    "companyName": "АБС Электро",
+    "companyHhId": 52578,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 50
+  },
+  {
+    "companyName": "Авакс",
+    "companyHhId": 2515597,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "Авангард-Агро",
+    "companyHhId": 1859826,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 168
+  },
+  {
+    "companyName": "Авангард, АКБ",
+    "companyHhId": 5755,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 199
+  },
+  {
+    "companyName": "Авангард. Профессиональная экипировка",
+    "companyHhId": 29858,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 36
+  },
+  {
+    "companyName": "Аванта",
+    "companyHhId": 18109,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 15
+  },
+  {
+    "companyName": "«АВВА РУС»",
+    "companyHhId": 1053,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 51
+  },
+  {
+    "companyName": "Август, Фирма",
+    "companyHhId": 784,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 90
+  },
+  {
+    "companyName": "Авексима",
+    "companyHhId": 1179289,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 43
+  },
+  {
+    "companyName": "Авиакомпания Победа",
+    "companyHhId": 1520649,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 39
+  },
+  {
+    "companyName": "Авиакомпания РОЯЛ ФЛАЙТ",
+    "companyHhId": 2040610,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Авиационная корпорация Рубин",
+    "companyHhId": 1035262,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "Авл Премьер",
+    "companyHhId": 5172095,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 23
+  },
+  {
+    "companyName": "Авоська, Cеть универсамов",
+    "companyHhId": 23636,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 22
+  },
+  {
+    "companyName": "Аврора ПМ",
+    "companyHhId": 686596,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "АвтоГарант",
+    "companyHhId": 5778434,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "АвтоГЕРМЕС, Группа компаний",
+    "companyHhId": 156344,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 70
+  },
+  {
+    "companyName": "Автодеталь",
+    "companyHhId": 5153359,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 19
+  },
+  {
+    "companyName": "Автодин",
+    "companyHhId": 1226563,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 22
+  },
+  {
+    "companyName": "Автодор-Платные Дороги",
+    "companyHhId": 3075114,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 15
+  },
+  {
+    "companyName": "Авто-Евро",
+    "companyHhId": 215194,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 142
+  },
+  {
+    "companyName": "АВТОИНВЕСТ",
+    "companyHhId": 6612,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Автомама",
+    "companyHhId": 1992423,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Автоматизация и Консалтинг",
+    "companyHhId": 839098,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "АВТОМИР, ГК",
+    "companyHhId": 569,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 269
+  },
+  {
+    "companyName": "Автомобильный батальон 2го специального полка Полиции ГУ МВД России по г. Москве",
+    "companyHhId": 3789495,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 46
+  },
+  {
+    "companyName": "Авторитэйл М",
+    "companyHhId": 4779813,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 78
+  },
+  {
+    "companyName": "АвтоСпецЦентр",
+    "companyHhId": 13520,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 98
+  },
+  {
+    "companyName": "Автостэлс",
+    "companyHhId": 88618,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 34
+  },
+  {
+    "companyName": "Автофлот-Столица",
+    "companyHhId": 3732737,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 26
+  },
+  {
+    "companyName": "АГАМА, Группа компаний",
+    "companyHhId": 35143,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 37
+  },
+  {
+    "companyName": "Агентство 21 век, КЦ",
+    "companyHhId": 659638,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 21
+  },
+  {
+    "companyName": "Агентство Инфраструктурного и Промышленного Развития Ямало-Ненецкого Автономного Округа",
+    "companyHhId": 2367496,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 43
+  },
+  {
+    "companyName": "Агентство кадрового аутсорсинга ALL HR",
+    "companyHhId": 1107291,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 29
+  },
+  {
+    "companyName": "Агентство КИТ Консалт",
+    "companyHhId": 637743,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 438
+  },
+  {
+    "companyName": "Агентство мерчандайзинга АСМ",
+    "companyHhId": 245063,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 63
+  },
+  {
+    "companyName": "Агентство Ми-Ми",
+    "companyHhId": 1888985,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 26
+  },
+  {
+    "companyName": "Агентство недвижимости Риэлторский Центр",
+    "companyHhId": 1484354,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "Агентство по подбору персонала Global Search",
+    "companyHhId": 5414326,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 22
+  },
+  {
+    "companyName": "Агора, Группа компаний",
+    "companyHhId": 6195,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 47
+  },
+  {
+    "companyName": "Агранта",
+    "companyHhId": 1140237,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "Агроинновация",
+    "companyHhId": 4126397,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Агрокомбинат Московский",
+    "companyHhId": 127942,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 21
+  },
+  {
+    "companyName": "Агро-Нова",
+    "companyHhId": 667838,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 19
+  },
+  {
+    "companyName": "Агрохолдинг Белая Дача",
+    "companyHhId": 105688,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 53
+  },
+  {
+    "companyName": "А Групп",
+    "companyHhId": 4556033,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 19
+  },
+  {
+    "companyName": "АДАМАС",
+    "companyHhId": 72995,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 46
+  },
+  {
+    "companyName": "АДВ",
+    "companyHhId": 1994,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 63
+  },
+  {
+    "companyName": "Аддвайз",
+    "companyHhId": 919758,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 65
+  },
+  {
+    "companyName": "Азбука вкуса",
+    "companyHhId": 2120,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 288
+  },
+  {
+    "companyName": "Азбука Качества-дом брендов",
+    "companyHhId": 683367,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 36
+  },
+  {
+    "companyName": "Азбука Логистики",
+    "companyHhId": 1550505,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "Азимут ФМ",
+    "companyHhId": 408802,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 23
+  },
+  {
+    "companyName": "Айбим",
+    "companyHhId": 1383002,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "Ай Ди Инжинирс",
+    "companyHhId": 3948697,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Айковер ПРО",
+    "companyHhId": 933066,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 19
+  },
+  {
+    "companyName": "АЙКРАФТ",
+    "companyHhId": 726371,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 186
+  },
+  {
+    "companyName": "АЙНЬЮС, OOO",
+    "companyHhId": 31331,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 27
+  },
+  {
+    "companyName": "АйПиМатика",
+    "companyHhId": 1681293,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "АЙРО",
+    "companyHhId": 1741919,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "АЙСБЕРРИ",
+    "companyHhId": 2751,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 102
+  },
+  {
+    "companyName": "Айсиэм",
+    "companyHhId": 3320111,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "Ай-Теко (I-Teco)",
+    "companyHhId": 115,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 122
+  },
+  {
+    "companyName": "АйТиКвик",
+    "companyHhId": 2639497,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "АйТиКомпани",
+    "companyHhId": 3712021,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Айтикью Груп",
+    "companyHhId": 4722815,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 39
+  },
+  {
+    "companyName": "Айти-Солюшнс",
+    "companyHhId": 1758157,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "АЙФЭЛЛ",
+    "companyHhId": 3646686,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 22
+  },
+  {
+    "companyName": "АйЭнДи Аркитектс",
+    "companyHhId": 857881,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Академия REMOTE TEAM",
+    "companyHhId": 4619048,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "Академия Интернет-Профессий",
+    "companyHhId": 5144112,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "Академия Максимус",
+    "companyHhId": 197566,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 95
+  },
+  {
+    "companyName": "Академия социального управления",
+    "companyHhId": 79618,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 23
+  },
+  {
+    "companyName": "Академия физического развития GYM KIDs",
+    "companyHhId": 2150191,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 15
+  },
+  {
+    "companyName": "АК АЛРОСА",
+    "companyHhId": 92288,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 369
+  },
+  {
+    "companyName": "Аквариус",
+    "companyHhId": 4972744,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Аквафор Лайн",
+    "companyHhId": 1718219,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 18
+  },
+  {
+    "companyName": "Аквион",
+    "companyHhId": 1644,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "АККУЮ НУКЛЕАР",
+    "companyHhId": 885567,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 22
+  },
+  {
+    "companyName": "АКЛЕН",
+    "companyHhId": 1011175,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "«АКП-Техно»",
+    "companyHhId": 541729,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 37
+  },
+  {
+    "companyName": "АКРИХИН",
+    "companyHhId": 2371,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 51
+  },
+  {
+    "companyName": "Акрон",
+    "companyHhId": 44,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 55
+  },
+  {
+    "companyName": "Аксенова Анна Евгеньевна",
+    "companyHhId": 5431838,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "«Аксиома-Софт»",
+    "companyHhId": 1512281,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 106
+  },
+  {
+    "companyName": "АКСИС",
+    "companyHhId": 3785015,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "АКСИТЕХ",
+    "companyHhId": 538164,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 27
+  },
+  {
+    "companyName": "Аксофт",
+    "companyHhId": 1008388,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 26
+  },
+  {
+    "companyName": "Актив",
+    "companyHhId": 2147,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 20
+  },
+  {
+    "companyName": "АКТИВИТИ ГРУПП",
+    "companyHhId": 1220863,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "Актион Технологии",
+    "companyHhId": 3460322,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "Актио Рус",
+    "companyHhId": 2470028,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "Акуматика",
+    "companyHhId": 1055151,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Акушерство.ru, Компания",
+    "companyHhId": 890621,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 27
+  },
+  {
+    "companyName": "Акционерное общество Национальный центр вертолетостроения им. М.Л. Миля и Н.И. Камова",
+    "companyHhId": 54267,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 83
+  },
+  {
+    "companyName": "Албес Мет",
+    "companyHhId": 4206050,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 22
+  },
+  {
+    "companyName": "АЛВИСА",
+    "companyHhId": 2703,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 33
+  },
+  {
+    "companyName": "Алгоритмика",
+    "companyHhId": 2657797,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 58
+  },
+  {
+    "companyName": "А.Л.-ГРУПП",
+    "companyHhId": 5714271,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "АЛЕВ ГРУПП",
+    "companyHhId": 2629741,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 15
+  },
+  {
+    "companyName": "Алена Ахмадуллина (Модный дом)",
+    "companyHhId": 1142041,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 17
+  },
+  {
+    "companyName": "Алианта Групп",
+    "companyHhId": 3772,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 50
+  },
+  {
+    "companyName": "Алиди Продвижение",
+    "companyHhId": 5124702,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 91
+  },
+  {
+    "companyName": "Алкоклиник",
+    "companyHhId": 2299697,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Алкомаркет.ру",
+    "companyHhId": 4475320,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Алкон Фармацевтика",
+    "companyHhId": 1769199,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 20
+  },
+  {
+    "companyName": "АЛМА",
+    "companyHhId": 702059,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "АЛМАТЕЛ",
+    "companyHhId": 84297,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 38
+  },
+  {
+    "companyName": "АЛРОСА Информационные технологии",
+    "companyHhId": 4418001,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 27
+  },
+  {
+    "companyName": "АЛСО ТРЕЙД",
+    "companyHhId": 4371174,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "Алхена",
+    "companyHhId": 4590837,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 19
+  },
+  {
+    "companyName": "Алькор Персонал",
+    "companyHhId": 3919970,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "АльмакорГруп",
+    "companyHhId": 1024558,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 81
+  },
+  {
+    "companyName": "АЛЬТАГЕН",
+    "companyHhId": 2740164,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Альтернативная Генерирующая Компания -1",
+    "companyHhId": 2779875,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 34
+  },
+  {
+    "companyName": "АЛЬФА АВТОМАТИВ ТЕХНОЛОЖИЗ",
+    "companyHhId": 835580,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "Альфа-Банк",
+    "companyHhId": 80,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 1452
+  },
+  {
+    "companyName": "Альфа Капитал",
+    "companyHhId": 624,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 23
+  },
+  {
+    "companyName": "АЛЬФА КОНСТРАКТ",
+    "companyHhId": 2991760,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Альфа-Лизинг",
+    "companyHhId": 785095,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 107
+  },
+  {
+    "companyName": "Альфа-Развитие",
+    "companyHhId": 2320555,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 40
+  },
+  {
+    "companyName": "АльфаСтрахование",
+    "companyHhId": 370,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 180
+  },
+  {
+    "companyName": "АльфаСтрахование Жизнь",
+    "companyHhId": 2101125,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 17
+  },
+  {
+    "companyName": "АльфаСтрахование-ОМС",
+    "companyHhId": 2101139,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 24
+  },
+  {
+    "companyName": "Альфатехформ",
+    "companyHhId": 2669027,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Альфа Центр Здоровья",
+    "companyHhId": 2101131,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 120
+  },
+  {
+    "companyName": "Альянс",
+    "companyHhId": 4930529,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Альянс",
+    "companyHhId": 5018406,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "АЛЬЯНС ТРАКС",
+    "companyHhId": 1278656,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 22
+  },
+  {
+    "companyName": "Альянс Экспресс",
+    "companyHhId": 2892996,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "АМАКС",
+    "companyHhId": 72511,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 156
+  },
+  {
+    "companyName": "Амалко",
+    "companyHhId": 692276,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 40
+  },
+  {
+    "companyName": "АМДтехнологии",
+    "companyHhId": 4081244,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "Амер Спортс",
+    "companyHhId": 11167,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "Амиком Трейд",
+    "companyHhId": 982405,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Амплюс-Сат",
+    "companyHhId": 4569577,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "АМТЕХ",
+    "companyHhId": 3707634,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Аналитика Эс Си Ар",
+    "companyHhId": 4564775,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Аналитический центр при Правительстве Российской Федерации",
+    "companyHhId": 211052,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 22
+  },
+  {
+    "companyName": "АндерСон",
+    "companyHhId": 797003,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 43
+  },
+  {
+    "companyName": "Анекс Туризм",
+    "companyHhId": 1487489,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 22
+  },
+  {
+    "companyName": "Анлимитед Продакшен",
+    "companyHhId": 3087089,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "АНО ВО МОСКОВСКИЙ МЕЖДУНАРОДНЫЙ УНИВЕРСИТЕТ",
+    "companyHhId": 48553,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 18
+  },
+  {
+    "companyName": "АНО Диалог Регионы",
+    "companyHhId": 4903713,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 46
+  },
+  {
+    "companyName": "АНО Дополнительного Профессионального Образования «Национальный Исследовательский Институт Дополнительного Образования и Профессионального обучения»",
+    "companyHhId": 3052096,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 48
+  },
+  {
+    "companyName": "АНО ДПО ИПК ТЕХНОПРОГРЕСС",
+    "companyHhId": 584340,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 25
+  },
+  {
+    "companyName": "АНО ДПО НАДПО",
+    "companyHhId": 3473404,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 18
+  },
+  {
+    "companyName": "АНОО Областная гимназия им. Примакова",
+    "companyHhId": 3126525,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "АНО Проектный офис по Развитию Туризма и Гостеприимства Москвы",
+    "companyHhId": 3956819,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 18
+  },
+  {
+    "companyName": "АНО Развитие социальной инфраструктуры",
+    "companyHhId": 4299604,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "АНО СОШ «Академическая Гимназия»",
+    "companyHhId": 624675,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 31
+  },
+  {
+    "companyName": "АНО Центр развития Среда возможностей",
+    "companyHhId": 4561908,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 115
+  },
+  {
+    "companyName": "АнРуссТранс",
+    "companyHhId": 21221,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "АнтенМед",
+    "companyHhId": 1889101,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 20
+  },
+  {
+    "companyName": "АО МОСОТДЕЛСТРОЙ № 1",
+    "companyHhId": 1297678,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 33
+  },
+  {
+    "companyName": "АП MARKETING",
+    "companyHhId": 4717727,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "Аплеона ХСГ",
+    "companyHhId": 2992,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 22
+  },
+  {
+    "companyName": "Аппекс",
+    "companyHhId": 3178909,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 32
+  },
+  {
+    "companyName": "Аппетит Resto",
+    "companyHhId": 169611,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 33
+  },
+  {
+    "companyName": "АПТЕКА ВАША № 1",
+    "companyHhId": 3344320,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 70
+  },
+  {
+    "companyName": "Аптечная сеть 36,6",
+    "companyHhId": 132656,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 177
+  },
+  {
+    "companyName": "Аптечная сеть ЗДОРОВ.ру",
+    "companyHhId": 680537,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 173
+  },
+  {
+    "companyName": "АПТОС ГРУПП",
+    "companyHhId": 231552,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "АПХ ЭКО-культура",
+    "companyHhId": 2499672,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 78
+  },
+  {
+    "companyName": "Аравия",
+    "companyHhId": 1399654,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 18
+  },
+  {
+    "companyName": "Ареал Био",
+    "companyHhId": 1103895,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Аренадата Софтвер",
+    "companyHhId": 4813742,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "Аристос Ритейл",
+    "companyHhId": 1245213,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "Арка, Торговая компания",
+    "companyHhId": 977,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 63
+  },
+  {
+    "companyName": "Арктик Катеринг Сервис",
+    "companyHhId": 2021784,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 131
+  },
+  {
+    "companyName": "Арктик СПГ 2",
+    "companyHhId": 3731049,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 47
+  },
+  {
+    "companyName": "Арктикуголь, ФГУП ГТ",
+    "companyHhId": 550704,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Арлайт РУС",
+    "companyHhId": 900045,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 22
+  },
+  {
+    "companyName": "Арли",
+    "companyHhId": 5721204,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 22
+  },
+  {
+    "companyName": "Армида Трейд",
+    "companyHhId": 5551178,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "АРМО, ГК",
+    "companyHhId": 219661,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 18
+  },
+  {
+    "companyName": "Армтек",
+    "companyHhId": 1417,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 328
+  },
+  {
+    "companyName": "Арнейс",
+    "companyHhId": 2087330,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "АРНИ",
+    "companyHhId": 1968188,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "АРОСА",
+    "companyHhId": 1487546,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 34
+  },
+  {
+    "companyName": "АРС",
+    "companyHhId": 3622300,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "Арт-Визаж",
+    "companyHhId": 10765,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "АРТИ",
+    "companyHhId": 470,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "Арт и Дизайн",
+    "companyHhId": 886,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 43
+  },
+  {
+    "companyName": "АРТИС",
+    "companyHhId": 202145,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 55
+  },
+  {
+    "companyName": "Арткера",
+    "companyHhId": 1674008,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 27
+  },
+  {
+    "companyName": "АРТМЕТАН ГРУПП",
+    "companyHhId": 4687033,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 22
+  },
+  {
+    "companyName": "Артпласт",
+    "companyHhId": 10773,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 18
+  },
+  {
+    "companyName": "Артстройтехнология",
+    "companyHhId": 1481238,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 50
+  },
+  {
+    "companyName": "АртТранзит",
+    "companyHhId": 1398128,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "АРХБУМ",
+    "companyHhId": 1304871,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 41
+  },
+  {
+    "companyName": "Архетип",
+    "companyHhId": 4245959,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "АСГ-КОНСТРАКШН",
+    "companyHhId": 93550,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 110
+  },
+  {
+    "companyName": "А-Сервис",
+    "companyHhId": 5718360,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 31
+  },
+  {
+    "companyName": "Асланов Технолоджи Групп",
+    "companyHhId": 5692566,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "АСП-АКВА",
+    "companyHhId": 2578367,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 20
+  },
+  {
+    "companyName": "Аспект",
+    "companyHhId": 172343,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 107
+  },
+  {
+    "companyName": "Ассоциация IPChain",
+    "companyHhId": 3151408,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 27
+  },
+  {
+    "companyName": "Ассоциация Волонтерских Центров",
+    "companyHhId": 2524031,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Ассоциация КАМИ",
+    "companyHhId": 6031,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 61
+  },
+  {
+    "companyName": "Ассоциация управляющих многоквартирными домами Основа",
+    "companyHhId": 2817265,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 51
+  },
+  {
+    "companyName": "АСТ, издательская группа",
+    "companyHhId": 4121,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 42
+  },
+  {
+    "companyName": "АСТ-Интернэшнл инваэронмэнт",
+    "companyHhId": 5382,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Астор",
+    "companyHhId": 606,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "АстраЗенека",
+    "companyHhId": 3400,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 105
+  },
+  {
+    "companyName": "АстраЗенека Индастриз",
+    "companyHhId": 2876326,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Астэк-МТ, ГК",
+    "companyHhId": 560047,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 50
+  },
+  {
+    "companyName": "АТБ Электроника",
+    "companyHhId": 151347,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "Атекс Групп",
+    "companyHhId": 1431574,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "Ателика, УК",
+    "companyHhId": 658279,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 15
+  },
+  {
+    "companyName": "А-Техникс",
+    "companyHhId": 2173850,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 29
+  },
+  {
+    "companyName": "АТЛАНТ",
+    "companyHhId": 2651848,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 91
+  },
+  {
+    "companyName": "Атлант",
+    "companyHhId": 2819712,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Атлант Групп",
+    "companyHhId": 243254,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 67
+  },
+  {
+    "companyName": "Атлантик Неман",
+    "companyHhId": 1144961,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "Атлант Оценка",
+    "companyHhId": 1763847,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 24
+  },
+  {
+    "companyName": "Атлант-право",
+    "companyHhId": 1196,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Атлас Копко",
+    "companyHhId": 4697,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 27
+  },
+  {
+    "companyName": "Атлас Майнинг",
+    "companyHhId": 8882,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 71
+  },
+  {
+    "companyName": "АТОЛ, группа компаний",
+    "companyHhId": 3343,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 64
+  },
+  {
+    "companyName": "АТОМСТРОЙРЕЗЕРВ",
+    "companyHhId": 2059106,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 26
+  },
+  {
+    "companyName": "Атомэнергомаш",
+    "companyHhId": 65665,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Атомэнергосбыт",
+    "companyHhId": 728570,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 15
+  },
+  {
+    "companyName": "АТОН",
+    "companyHhId": 46387,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 68
+  },
+  {
+    "companyName": "АТРАПАК",
+    "companyHhId": 3202060,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "АТТ Групп",
+    "companyHhId": 1373854,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 32
+  },
+  {
+    "companyName": "АТЭК",
+    "companyHhId": 93006,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 61
+  },
+  {
+    "companyName": "АУДИОТЕЛЕ",
+    "companyHhId": 4579,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 73
+  },
+  {
+    "companyName": "Аффилированные компании «Филип Моррис Интернэшнл» в России",
+    "companyHhId": 12849,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 48
+  },
+  {
+    "companyName": "Аэромакс",
+    "companyHhId": 4595548,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 49
+  },
+  {
+    "companyName": "Аэромар",
+    "companyHhId": 712749,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 47
+  },
+  {
+    "companyName": "Аэропит-Сервис",
+    "companyHhId": 3468,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Аэроприбор-Восход",
+    "companyHhId": 973282,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 37
+  },
+  {
+    "companyName": "АэроПромо",
+    "companyHhId": 3241748,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 26
+  },
+  {
+    "companyName": "Аэротэк",
+    "companyHhId": 1013535,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Аэрофлот",
+    "companyHhId": 1373,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 15
+  },
+  {
+    "companyName": "Аэроэлектромаш",
+    "companyHhId": 1101946,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 21
+  },
+  {
+    "companyName": "АЯКС",
+    "companyHhId": 103572,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "Б-24",
+    "companyHhId": 2221848,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "База Внуково Управления Материально-Технического Обеспечения Службы Хозяйственного Обеспечения Федеральной Службы Охраны Российской Федерации",
+    "companyHhId": 4677998,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 89
+  },
+  {
+    "companyName": "Байкал Проект",
+    "companyHhId": 1000192,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 22
+  },
+  {
+    "companyName": "Байкал-Сервис",
+    "companyHhId": 57996,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 169
+  },
+  {
+    "companyName": "Бакарди Рус",
+    "companyHhId": 6351,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 19
+  },
+  {
+    "companyName": "«Баланс-Платформа»",
+    "companyHhId": 2643808,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 26
+  },
+  {
+    "companyName": "Баланс Телеком",
+    "companyHhId": 3538794,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Балет с 2 лет",
+    "companyHhId": 902270,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "БалтАвтоТрейд-М",
+    "companyHhId": 2124,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 18
+  },
+  {
+    "companyName": "БАЛТАЗАР",
+    "companyHhId": 3137464,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Балтийский Химический Комплекс",
+    "companyHhId": 4913308,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 27
+  },
+  {
+    "companyName": "Бамбини",
+    "companyHhId": 899480,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 15
+  },
+  {
+    "companyName": "Бамстройтехнологии",
+    "companyHhId": 5466193,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 93
+  },
+  {
+    "companyName": "Бамтоннельстрой-Мост",
+    "companyHhId": 142788,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 315
+  },
+  {
+    "companyName": "Банк ВТБ (ПАО)",
+    "companyHhId": 4181,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 1890
+  },
+  {
+    "companyName": "Банк ДОМ.РФ",
+    "companyHhId": 3443,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 342
+  },
+  {
+    "companyName": "Банк Жилищного Финансирования",
+    "companyHhId": 14759,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 18
+  },
+  {
+    "companyName": "БАНК ИНТЕЗА",
+    "companyHhId": 589,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 36
+  },
+  {
+    "companyName": "Банки.ру",
+    "companyHhId": 72986,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 46
+  },
+  {
+    "companyName": "Банк Открытие",
+    "companyHhId": 23040,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 935
+  },
+  {
+    "companyName": "Банк Русский Стандарт",
+    "companyHhId": 586,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 452
+  },
+  {
+    "companyName": "БАНК УРАЛСИБ",
+    "companyHhId": 89,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 385
+  },
+  {
+    "companyName": "Банк Хоум Кредит",
+    "companyHhId": 1496,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 400
+  },
+  {
+    "companyName": "Баранов Николай Григорьевич",
+    "companyHhId": 4719719,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Бат Нортон",
+    "companyHhId": 1109594,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "БауТекс",
+    "companyHhId": 564522,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "ББР Банк",
+    "companyHhId": 3323,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 31
+  },
+  {
+    "companyName": "БВБ Альянс",
+    "companyHhId": 1877035,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Безлимит",
+    "companyHhId": 1050336,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "Безопасный водитель",
+    "companyHhId": 1909065,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "БЕЙКЕР ХЬЮЗ",
+    "companyHhId": 2501547,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 21
+  },
+  {
+    "companyName": "Белатрикс",
+    "companyHhId": 4214216,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 17
+  },
+  {
+    "companyName": "Белгородские молочные продукты",
+    "companyHhId": 860885,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 48
+  },
+  {
+    "companyName": "Белгородский консервный комбинат",
+    "companyHhId": 3967844,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 19
+  },
+  {
+    "companyName": "Белла Восток",
+    "companyHhId": 48835,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "БЕЛУПО, лекарства и косметика д.д.",
+    "companyHhId": 32619,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "Белфан",
+    "companyHhId": 160642,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 18
+  },
+  {
+    "companyName": "БЕРГ Холдинг",
+    "companyHhId": 38314,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 55
+  },
+  {
+    "companyName": "Берингер Ингельхайм",
+    "companyHhId": 3298,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 26
+  },
+  {
+    "companyName": "Берлин-Хеми/А. Менарини",
+    "companyHhId": 55590,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 20
+  },
+  {
+    "companyName": "Бест Клиник",
+    "companyHhId": 1360360,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "БЕСТ-Недвижимость",
+    "companyHhId": 1899046,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 17
+  },
+  {
+    "companyName": "Бетховен сеть зоомагазинов",
+    "companyHhId": 101329,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 124
+  },
+  {
+    "companyName": "Бецкой",
+    "companyHhId": 3656617,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 15
+  },
+  {
+    "companyName": "Бизапс",
+    "companyHhId": 1753496,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "БизнесАвтоматика, НПЦ",
+    "companyHhId": 753622,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Бизнес Маркет",
+    "companyHhId": 1132007,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "Бизнес Продакшн",
+    "companyHhId": 5076605,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 25
+  },
+  {
+    "companyName": "Бизнеспроект",
+    "companyHhId": 1925,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Бизнес Решение",
+    "companyHhId": 1863919,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 201
+  },
+  {
+    "companyName": "Бизнес Трэвел Джоб",
+    "companyHhId": 41988,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 58
+  },
+  {
+    "companyName": "Бизнес Успех",
+    "companyHhId": 2156510,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 33
+  },
+  {
+    "companyName": "Билайн",
+    "companyHhId": 4934,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 3338
+  },
+  {
+    "companyName": "Биланчо",
+    "companyHhId": 2630186,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "Биодом",
+    "companyHhId": 4395645,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "Бион",
+    "companyHhId": 701402,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Бионика",
+    "companyHhId": 1992,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "БиоФудТех",
+    "companyHhId": 1034651,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 17
+  },
+  {
+    "companyName": "Би Телеком",
+    "companyHhId": 4889905,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Бифорком Тек",
+    "companyHhId": 3494169,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "БиЭмДжей-Логистикс",
+    "companyHhId": 1588351,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "БКК «Коломенский»",
+    "companyHhId": 2166,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 116
+  },
+  {
+    "companyName": "БК Олимп",
+    "companyHhId": 2070865,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 19
+  },
+  {
+    "companyName": "БК Центр",
+    "companyHhId": 24495,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "Благодать",
+    "companyHhId": 2823598,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 21
+  },
+  {
+    "companyName": "Благо Кредит",
+    "companyHhId": 1617273,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 55
+  },
+  {
+    "companyName": "БЛАГОСОСТОЯНИЕ, Негосударственный пенсионный фонд",
+    "companyHhId": 17296,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Бланк – банк для бизнеса",
+    "companyHhId": 79736,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 17
+  },
+  {
+    "companyName": "БМЕ Групп",
+    "companyHhId": 3278193,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 37
+  },
+  {
+    "companyName": "Большакова Полина Дмитриевна",
+    "companyHhId": 4383512,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "Борлас, Консалтинговая группа",
+    "companyHhId": 222045,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 35
+  },
+  {
+    "companyName": "БОСТОНДЖИН",
+    "companyHhId": 2628219,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 17
+  },
+  {
+    "companyName": "Бразен Констракшен",
+    "companyHhId": 214597,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 24
+  },
+  {
+    "companyName": "Брайт",
+    "companyHhId": 5683314,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 276
+  },
+  {
+    "companyName": "Бридж Групп",
+    "companyHhId": 1044790,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "Бриз - Климатические Системы",
+    "companyHhId": 17128,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 55
+  },
+  {
+    "companyName": "БРИКСО",
+    "companyHhId": 3812503,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "Бристоль Ритейл Логистикс",
+    "companyHhId": 2234493,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 72
+  },
+  {
+    "companyName": "Бёрн",
+    "companyHhId": 3544864,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "Брок-Инвест-Сервис",
+    "companyHhId": 13483,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 48
+  },
+  {
+    "companyName": "БТЛ",
+    "companyHhId": 944617,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "БУЛАТ",
+    "companyHhId": 2378475,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 15
+  },
+  {
+    "companyName": "БУНГЕ СНГ",
+    "companyHhId": 4776,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 33
+  },
+  {
+    "companyName": "БУРГЕР КИНГ РОССИЯ",
+    "companyHhId": 625332,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 234
+  },
+  {
+    "companyName": "БЬЮТИ ПРОФ",
+    "companyHhId": 5588719,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "Бэнкс Софт Системс",
+    "companyHhId": 2575,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 65
+  },
+  {
+    "companyName": "БЭТ",
+    "companyHhId": 556450,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "Бюджетные и Финансовые Технологии",
+    "companyHhId": 9188,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 174
+  },
+  {
+    "companyName": "Бянкин Вадим Алексеевич",
+    "companyHhId": 5090871,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "В2B",
+    "companyHhId": 2706424,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 27
+  },
+  {
+    "companyName": "ВАВТ МИНЭКОНОМРАЗВИТИЯ РОССИИ",
+    "companyHhId": 66121,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Вайн дискавери",
+    "companyHhId": 1205784,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "Вай Тай",
+    "companyHhId": 2123346,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 17
+  },
+  {
+    "companyName": "Валарм",
+    "companyHhId": 2156053,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Валента Фармацевтика",
+    "companyHhId": 1982,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 90
+  },
+  {
+    "companyName": "Валта",
+    "companyHhId": 83214,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 66
+  },
+  {
+    "companyName": "Вариантор",
+    "companyHhId": 1581054,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 30
+  },
+  {
+    "companyName": "Вартон",
+    "companyHhId": 570444,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 37
+  },
+  {
+    "companyName": "Ваш персонал",
+    "companyHhId": 1321461,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 392
+  },
+  {
+    "companyName": "ВБЦ",
+    "companyHhId": 2005098,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 79
+  },
+  {
+    "companyName": "ВГТРК (Всероссийская государственная телевизионная и радиовещательная компания)",
+    "companyHhId": 2651823,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 33
+  },
+  {
+    "companyName": "Вебинар Технологии",
+    "companyHhId": 534148,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 16
+  },
+  {
+    "companyName": "Ведомости",
+    "companyHhId": 2152292,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 11
+  },
+  {
+    "companyName": "ВЕЙНЕР ПЛАСТИК АРТПАК",
+    "companyHhId": 2617898,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "Вектор",
+    "companyHhId": 4079862,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "Вектура",
+    "companyHhId": 767421,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 33
+  },
+  {
+    "companyName": "Велес",
+    "companyHhId": 4096055,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 187
+  },
+  {
+    "companyName": "Велес Капитал, ИК",
+    "companyHhId": 7285,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 18
+  },
+  {
+    "companyName": "Велесстрой",
+    "companyHhId": 681883,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 897
+  },
+  {
+    "companyName": "Веллдан",
+    "companyHhId": 1943836,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 54
+  },
+  {
+    "companyName": "«ВентПоставка»",
+    "companyHhId": 9647,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 29
+  },
+  {
+    "companyName": "ВЕРДЖИН ИВЕНТ",
+    "companyHhId": 1164659,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "Верейкин Р.С.",
+    "companyHhId": 1541775,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "Веренд-Дизайн",
+    "companyHhId": 141874,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "ВЕРИС ПРОЕКТ",
+    "companyHhId": 3985071,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "Вернер Елена",
+    "companyHhId": 5371691,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 36
+  },
+  {
+    "companyName": "ВЕРНЫЙ, Сеть магазинов",
+    "companyHhId": 1030733,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 707
+  },
+  {
+    "companyName": "Верона, школа моделей",
+    "companyHhId": 1058813,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "ВЕРОФАРМ",
+    "companyHhId": 2694,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 84
+  },
+  {
+    "companyName": "ВЕРТИКАЛЬ",
+    "companyHhId": 72126,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 98
+  },
+  {
+    "companyName": "Вертикаль",
+    "companyHhId": 5577354,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 12
+  },
+  {
+    "companyName": "ВЕС-Медиа",
+    "companyHhId": 2139169,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 49
+  },
+  {
+    "companyName": "ВЕСТА, Логистическая компания",
+    "companyHhId": 20921,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 18
+  },
+  {
+    "companyName": "ВестМедГрупп",
+    "companyHhId": 1522393,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 26
+  },
+  {
+    "companyName": "Вет Сити Центр",
+    "companyHhId": 3847260,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 15
+  },
+  {
+    "companyName": "ВЕТТ ТРАНС",
+    "companyHhId": 111717,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 27
+  },
+  {
+    "companyName": "ВЕЯ ИНВЕСТ",
+    "companyHhId": 935373,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 10
+  },
+  {
+    "companyName": "ВИЕР Групп",
+    "companyHhId": 1265899,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 13
+  },
+  {
+    "companyName": "ВижнЛабс (VisionLabs)",
+    "companyHhId": 1978012,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 15
+  },
+  {
+    "companyName": "Викиум",
+    "companyHhId": 2080750,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 15
+  },
+  {
+    "companyName": "Виктория, Сеть супермаркетов",
+    "companyHhId": 3270,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 320
+  },
+  {
+    "companyName": "Виллетта",
+    "companyHhId": 4369792,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 27
+  },
+  {
+    "companyName": "Винлаб",
+    "companyHhId": 5676487,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 138
+  },
+  {
+    "companyName": "ВИП-Кинотеатр",
+    "companyHhId": 1738665,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 14
+  },
+  {
+    "companyName": "Випсервис",
+    "companyHhId": 31110,
+    "companyRegion": {
+      "name": "Москва",
+      "id": 1
+    },
+    "vacanciesCount": 35
+  }
+]
