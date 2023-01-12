@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import fetch from 'node-fetch'
-import moscowSpb from './2021-11-07-moscow-spb.json'
+
 const jsdom = require("jsdom")
 const { JSDOM } = jsdom
 global.DOMParser = new JSDOM().window.DOMParser

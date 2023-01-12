@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common'
-import { ABService } from './ab.service'
+import { ABService } from './ab.service-new'
 import { ABController } from './ab.controller'
 
 @Module({
